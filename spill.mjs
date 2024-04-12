@@ -11,8 +11,6 @@ const GaaTil = (maal) => {
     maal();
 }
 
-// Dette er en test
-
 const Start = (maal) => {
     if (window.location.hash) {
         maal = window.location.hash.replace("#", "")
@@ -44,7 +42,7 @@ function scene1() {
 
 function scene3() {
     const avdeling = new Blocks.Image("Bilder/Bakgrunner/avdeling.png", {x:0,y:0,width:1280,height:720});
-    const slobbieavdeling = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbieopenmouth.png"], {x:500,y:300,width:200,height:300, loop:true, auto:true});
+    const slobbieavdeling = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbieopenmoutharmdown.png"], {x:500,y:300,width:200,height:300, loop:true, auto:true});
     const speechbubbleavdeling = new Blocks.Image("Bilder/Snakkebobler/speechbubbleavdeling.png", {x:400,y:100,width:500,height:300});
     const cbscene3 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
     Actions.Click(cbscene3, () => {
@@ -55,7 +53,7 @@ function scene3() {
 
 function scene4() {
     const garderobe = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:0,y:0,width:1280,height:720});
-    const slobbiegarderobe = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbieopenmouth.png",], {x:500,y:400,width:200,height:300, loop:true, auto:true});
+    const slobbiegarderobe = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbieopenmoutharmdown.png",], {x:500,y:400,width:200,height:300, loop:true, auto:true});
     const blshoe1 = new Blocks.Image("Bilder/Oppgaver/blueshoe.png", {x:800,y:500,width:100,height:125});
     const gshoe1 = new Blocks.Image("Bilder/Oppgaver/greenshoe.png", {x:350,y:600,width:100,height:125});
     const pshoe1 = new Blocks.Image("Bilder/Oppgaver/pinkshoe.png", {x:900,y:600,width:100,height:125});
@@ -71,6 +69,37 @@ function scene4() {
 function scene5() {
     const garderobespill = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:0,y:0,width:1280,height:720});
     const blshoe2 = new Blocks.Image("Bilder/Oppgaver/blueshoe.png", {x:800,y:500,width:100,height:125});
+    Actions.Drag(blshoe2);
+    const blshoe3 = new Blocks.Image("Bilder/Oppgaver/blueshoe.png", {x:400,y:475,width:100,height:125});
+    Actions.Drag(blshoe3);
     const gshoe2 = new Blocks.Image("Bilder/Oppgaver/greenshoe.png", {x:600,y:500,width:100,height:125});
+    Actions.Drag(gshoe2);
+    const gshoe3 = new Blocks.Image("Bilder/Oppgaver/greenshoe.png", {x:250,y:500,width:100,height:125});
+    Actions.Drag(gshoe3);
+    const pshoe2 = new Blocks.Image("Bilder/Oppgaver/pinkshoe.png", {x:900,y:600,width:100,height:125});
+    Actions.Drag(pshoe2);
+    const pshoe3 = new Blocks.Image("Bilder/Oppgaver/pinkshoe.png", {x:700,y:576,width:100,height:125});
+    Actions.Drag(pshoe3);
+    const bshoe2 = new Blocks.Image("Bilder/Oppgaver/brownshoe.png", {x:350,y:600,width:100,height:125});
+    Actions.Drag(bshoe2);
+    const bshoe3 = new Blocks.Image("Bilder/Oppgaver/brownshoe.png", {x:700,y:600,width:100,height:125});
+    Actions.Drag(bshoe3);
+    const oshoe2 = new Blocks.Image("Bilder/Oppgaver/orangeshoe.png", {x:500,y:500,width:100,height:125});
+    Actions.Drag(oshoe2);   
+    const oshoe3 = new Blocks.Image("Bilder/Oppgaver/orangeshoe.png", {x:350,y:300,width:100,height:125});
+    Actions.Drag(oshoe3);
+    const obscene5 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
+    Actions.Click(obscene5, () => {
+        GaaTil(scene6);
+    })
+}
 
+function scene6 () {
+    const garderobe1 = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:0,y:0,width:1280,height:720});
+    const slobbiegarderobe1 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmup.png", "Bilder/Karakterer/slobbiearmup.png", "Bilder/Karakterer/slobbiearmup.png", "Bilder/Karakterer/slobbieopenmoutharmup.png",], {x:500,y:400,width:200,height:300, loop:true, auto:true});
+   
+}
+function scene7 () {
+    const closedgate = new Blocks.Image("Bilder/Bakgrunner/closedgate.png", {x:0,y:0,width:1280,height:720});
+    const slobbieclosedgate = new Blocks.Image("Bilder/Karakterer/slobbiearmup.png", {x:700,y:450,width:200,height:300});
 }
