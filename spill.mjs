@@ -42,7 +42,13 @@ function scene3() {
     const slobbieavdeling = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbieopenmoutharmdown.png"], {x:500,y:300,width:200,height:300, loop:true, auto:true});
     const speechbubbleavdeling = new Blocks.Image("Bilder/Snakkebobler/speechbubbleavdeling.png", {x:400,y:100,width:500,height:300});
     const cbscene3 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
+    const playknapp = new Blocks.Image("Lydfiler/speechbutton.png", {x:750,y:200,width:400,height:300});
+    let scene3audio = new Audio("Lydfiler/scene3.mp3");
+    Actions.Click(playknapp, () => {
+        scene3audio.play();
+    })
     Actions.Click(cbscene3, () => {
+        scene3audio.pause();
         GaaTil(scene4);
     })
 }
