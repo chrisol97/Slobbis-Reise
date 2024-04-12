@@ -11,6 +11,8 @@ const GaaTil = (maal) => {
     maal();
 }
 
+// Dette er en test
+
 const Start = (maal) => {
     if (window.location.hash) {
         maal = window.location.hash.replace("#", "")
