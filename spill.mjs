@@ -22,6 +22,13 @@ const Start = (maal) => {
 }
 //#endregion
 
+/* JOBBE MED SØNDAG ETTERMIDDAG/KVELD
+- Spille inn mer musikk, typ bakgrunnsmusikk
+- Legge inn eksempelkort til hver kategori på hvert map
+- Legge inn quick-hop knapper fra map til map
+- Lær levan-polka (høyrehånd på trekkspill)
+
+*/
 // QUICK SKIPBUTTON
 /*const skipbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:750,y:250,width:150,height:150});
 Actions.Click(skipbutton, () => {
@@ -37,13 +44,13 @@ let tall = Math.floor(Math.random() * 2);
     }*/
 
 // MUSIKK
-let titlescreenmusic = new Audio("Lydfiler/titlescreen.mp3");
-let chCardBearSleepSong = new Audio("Lydfiler/chCardBearSleepSong.mp3");
+let titlescreenmusic = new Audio("Lydfiler/Music/titlescreen.mp3");
+let chCardBearSleepSong = new Audio("Lydfiler/Music/chCardBearSleepSong.mp3");
 
 
 // LYDER TIL KORT
-let chCardBearSleepText = new Audio("Lydfiler/Cards/chCardBearSleepText.mp3");
-
+let chCardFBearSleepText = new Audio("Lydfiler/Cards/chCardFBearSleepText.mp3");
+let qCardFCamoTrollText = new Audio("Lydfiler/Cards/qCardFCamoTrollText.mp3");
 
 Start(scene0);
 
@@ -57,11 +64,12 @@ function scene0() {
 
 function scene1() {
     const titlescreen = new Blocks.Image("Bilder/Bakgrunner/titlescreen.jpg", {x:0,y:0,width:1280,height:720});
-    const startbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:250,y:250,width:150,height:150});
     const skipbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:750,y:250,width:150,height:150});
-    Actions.Click(skipbutton, () => {
-        GaaTil(sceneForestChallengeFront);
+Actions.Click(skipbutton, () => {
+        titlescreenmusic.pause();
+        GaaTil(qCardFCamoTrollQuestion1);
 })
+    const startbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:250,y:250,width:150,height:150});
     Actions.Click(startbutton, () => {
         GaaTil(scene3);
     })
@@ -268,8 +276,14 @@ function sceneMountain1 () {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1280,height:720});
     const slobbiemountain1 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speechbubblemountain1 = new Blocks.Image("Bilder/Snakkebobler/speechbubblemountain1.png", {x:500,y:300,width:500,height:300});
-    const cbMountain1 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:600,y:150,width:150,height:150});
+    const cbMountain1 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:250,y:550,width:150,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:900,y:550,width:150,height:150});
+    let sceneMountain1audio = new Audio("Lydfiler/SpeechBubbles/sceneMountain1SpeechBubble.mp3");
+    Actions.Click(playbutton, () => {
+        sceneMountain1audio.play();
+    })
     Actions.Click(cbMountain1, () => {
+        sceneMountain1audio.pause();
         GaaTil(sceneMountain2);
     })
 }
@@ -282,7 +296,13 @@ function sceneMountain2 () {
     const slobbiemountain2 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speecbubblemountain2 = new Blocks.Image("Bilder/Snakkebobler/speechbubblecardrules1.png", {x:500,y:300,width:500,height:300});
     const cbMountain2 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:120,y:550,width:150,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:1010,y:550,width:150,height:150});
+    let sceneMountain2audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules1.mp3");
+    Actions.Click(playbutton, () => {
+        sceneMountain2audio.play();
+    })
     Actions.Click(cbMountain2, () => {
+        sceneMountain2audio.pause();
         GaaTil(sceneMountain3);
     })
 }
@@ -295,7 +315,13 @@ function sceneMountain3 () {
     const slobbiemountain2 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speecbubblemountain2 = new Blocks.Image("Bilder/Snakkebobler/speechbubblecardrules2.png", {x:500,y:300,width:500,height:300});
     const cbMountain2 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:120,y:550,width:150,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:1010,y:550,width:150,height:150});
+    let sceneMountain3audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules2.mp3");
+    Actions.Click(playbutton, () => {
+        sceneMountain3audio.play();
+    })
     Actions.Click(cbMountain2, () => {
+        sceneMountain3audio.pause();
         GaaTil(sceneMountain4);
     })
 }
@@ -303,18 +329,26 @@ function sceneMountain3 () {
 function sceneMountain4 () {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1280,height:720});
     const chancebackM2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:850,y:175,width:350,height:450});
+    const questionbackM2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:450,y:175,width:350,height:450});
+    const challengebackM2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:350,height:450});
+    const quickhopbuttonS = new Blocks.Image("Bilder/Knapper/quickhopbuttonS.png", {x:920,y:25,width:150,height:150});
+    const quickhopbuttonF = new Blocks.Image("Bilder/Knapper/quickhopbuttonF.png", {x:1100,y:25,width:150,height:150});
+    const cbMountain4 =  new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:25,y:25,width:150,height:150});
     Actions.Click(chancebackM2, () => {
         GaaTil(sceneMountainChanceFront);
     })
-    const questionbackM2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:450,y:175,width:350,height:450});
     Actions.Click(questionbackM2, () => {
         GaaTil(sceneMountainQuestionFront);
     })
-    const challengebackM2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:350,height:450});
     Actions.Click(challengebackM2, () => {
         GaaTil(sceneMountainChallengeFront);
     })
-    const cbMountain4 =  new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:550,y:25,width:150,height:150});
+    Actions.Click(quickhopbuttonS, () => {
+        GaaTil(sceneSwamp4);
+    })
+    Actions.Click(quickhopbuttonF, () => {
+        GaaTil(sceneForest4);
+    })
     Actions.Click(cbMountain4, () => {
         GaaTil(scene13);
     })
@@ -324,7 +358,7 @@ function sceneMountain4 () {
 
 function sceneMountainChallengeFront () {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1280,height:720});
-    const challengeFront = new Blocks.Image("Bilder/Kort/challengefront.png", {x:30,y:10,width:1200,height:700});
+    const challengeFront = new Blocks.Image("Bilder/Kort/challengefrontempty.png", {x:30,y:10,width:1200,height:700});
     const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:80,y:550,width:150,height:150});
     Actions.Click(cbMountainChallengeFront, () => {
         GaaTil(sceneMountain4)
@@ -333,7 +367,7 @@ function sceneMountainChallengeFront () {
 
 function sceneMountainQuestionFront () {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1280,height:720});
-    const questionFront = new Blocks.Image("Bilder/Kort/questionfront.png", {x:30,y:10,width:1200,height:700});
+    const questionFront = new Blocks.Image("Bilder/Kort/questionfrontempty.png", {x:30,y:10,width:1200,height:700});
     const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});
     Actions.Click(cbMountainQuestionFront, () => {
         GaaTil(sceneMountain4)
@@ -342,7 +376,7 @@ function sceneMountainQuestionFront () {
 
 function sceneMountainChanceFront () {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1280,height:720});
-    const chanceFront = new Blocks.Image("Bilder/Kort/chancefront.png", {x:30,y:10,width:1200,height:700});
+    const chanceFront = new Blocks.Image("Bilder/Kort/chancefrontempty.png", {x:30,y:10,width:1200,height:700});
     const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});
     Actions.Click(cbMountainChanceFront, () => {
         GaaTil(sceneMountain4)
@@ -355,8 +389,14 @@ function sceneSwamp1 () {
     const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1280,height:720});
     const slobbieSwamp1 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speechbubbleswamp2 = new Blocks.Image("Bilder/Snakkebobler/speechbubbleswamp1.png", {x:500,y:300,width:500,height:300});
-    const cbSwamp1 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:600,y:150,width:150,height:150});
+    const cbSwamp1 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:250,y:550,width:150,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:900,y:550,width:150,height:150});
+    let sceneSwamp1audio = new Audio("Lydfiler/SpeechBubbles/sceneSwamp1SpeechBubble.mp3");
+    Actions.Click(playbutton, () => {
+        sceneSwamp1audio.play();
+    })
     Actions.Click(cbSwamp1, () => {
+        sceneSwamp1audio.pause();
         GaaTil(sceneSwamp2);
     })
 }
@@ -369,7 +409,13 @@ function sceneSwamp2 () {
     const slobbieSwamp2 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speecbubbleswamp2 = new Blocks.Image("Bilder/Snakkebobler/speechbubblecardrules1.png", {x:500,y:300,width:500,height:300});
     const cbSwamp2 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:120,y:550,width:150,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:1010,y:550,width:150,height:150});
+    let sceneSwamp2audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules1.mp3");
+    Actions.Click(playbutton, () => {
+        sceneSwamp2audio.play();
+    })
     Actions.Click(cbSwamp2, () => {
+        sceneSwamp2audio.pause();
         GaaTil(sceneSwamp3);
     })
 }
@@ -381,7 +427,13 @@ function sceneSwamp3 () {
     const slobbieSwamp3 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speecbubbleswamp3 = new Blocks.Image("Bilder/Snakkebobler/speechbubblecardrules2.png", {x:500,y:300,width:500,height:300});
     const cbSwamp3 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:120,y:550,width:150,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:1010,y:550,width:150,height:150});
+    let sceneSwamp3audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules2.mp3");
+    Actions.Click(playbutton, () => {
+        sceneSwamp3audio.play();
+    })
     Actions.Click(cbSwamp3, () => {
+        sceneSwamp3audio.pause();
         GaaTil(sceneSwamp4);
     })
 }
@@ -389,18 +441,26 @@ function sceneSwamp3 () {
 function sceneSwamp4 () {
     const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1280,height:720});
     const chancebackS2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:850,y:175,width:350,height:450});
+    const questionbackS2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:450,y:175,width:350,height:450});
+    const challengebackS2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:350,height:450});
+    const quickhopbuttonF = new Blocks.Image("Bilder/Knapper/quickhopbuttonF.png", {x:1100,y:25,width:150,height:150});
+    const quickhopbuttonM = new Blocks.Image("Bilder/Knapper/quickhopbuttonM.png", {x:920,y:25,width:150,height:150});
+    const cbSwamp4 =  new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:25,y:25,width:150,height:150});
     Actions.Click(chancebackS2, () => {
         GaaTil(sceneSwampChanceFront);
     })
-    const questionbackS2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:450,y:175,width:350,height:450});
     Actions.Click(questionbackS2, () => {
         GaaTil(sceneSwampQuestionFront);
     })
-    const challengebackS2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:350,height:450});
     Actions.Click(challengebackS2, () => {
          GaaTil(sceneSwampChallengeFront);
     })
-    const cbSwamp4 =  new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:550,y:25,width:150,height:150});
+    Actions.Click(quickhopbuttonF, () => {
+        GaaTil(sceneForest4);
+    })
+    Actions.Click(quickhopbuttonM, () => {
+        GaaTil(sceneMountain4);
+    })
     Actions.Click(cbSwamp4, () => {
         GaaTil(scene13);
     })
@@ -410,7 +470,7 @@ function sceneSwamp4 () {
 
 function sceneSwampChallengeFront () {
     const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1280,height:720});
-    const challengeFront = new Blocks.Image("Bilder/Kort/challengefront.png", {x:30,y:10,width:1200,height:700});
+    const challengeFront = new Blocks.Image("Bilder/Kort/challengefrontempty.png", {x:30,y:10,width:1200,height:700});
     const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:80,y:550,width:150,height:150});
     Actions.Click(cbSwampChallengeFront, () => {
         GaaTil(sceneSwamp4);
@@ -419,7 +479,7 @@ function sceneSwampChallengeFront () {
 
 function sceneSwampQuestionFront () {
     const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1280,height:720});
-    const questionFront = new Blocks.Image("Bilder/Kort/questionfront.png", {x:30,y:10,width:1200,height:700});
+    const questionFront = new Blocks.Image("Bilder/Kort/questionfrontempty.png", {x:30,y:10,width:1200,height:700});
     const cbSwampQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});
     Actions.Click(cbSwampQuestionFront, () => {
         GaaTil(sceneSwamp4);
@@ -428,7 +488,7 @@ function sceneSwampQuestionFront () {
 
 function sceneSwampChanceFront () {
     const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1280,height:720});
-    const chanceFront = new Blocks.Image("Bilder/Kort/chancefront.png", {x:30,y:10,width:1200,height:700});
+    const chanceFront = new Blocks.Image("Bilder/Kort/chancefrontempty.png", {x:30,y:10,width:1200,height:700});
     const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});
     Actions.Click(cbSwampChanceFront, () => {
         GaaTil(sceneSwamp4);
@@ -441,8 +501,14 @@ function sceneForest1 () {
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1280,height:720});
     const slobbieforest1 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speechbubbleforest1 = new Blocks.Image("Bilder/Snakkebobler/speechbubbleforest1.png", {x:500,y:300,width:500,height:300});
-    const cbForest1 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:600,y:150,width:150,height:150});
+    const cbForest1 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:250,y:550,width:150,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:900,y:550,width:150,height:150});
+    let sceneForest1audio = new Audio("Lydfiler/SpeechBubbles/sceneForest1SpeechBubble.mp3");
+    Actions.Click(playbutton, () => {
+        sceneForest1audio.play();
+    })
     Actions.Click(cbForest1, () => {
+        sceneForest1audio.pause();
         GaaTil(sceneForest2);
     })
 }
@@ -455,7 +521,13 @@ function sceneForest2 () {
     const slobbieForest2 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speechbubbleforest2 = new Blocks.Image("Bilder/Snakkebobler/speechbubblecardrules1.png", {x:500,y:300,width:500,height:300});
     const cbForest2 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:120,y:550,width:150,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:1010,y:550,width:150,height:150});
+    let sceneForest2audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules1.mp3");
+    Actions.Click(playbutton, () => {
+        sceneForest2audio.play();
+    })
     Actions.Click(cbForest2, () => {
+        sceneForest2audio.pause();
         GaaTil(sceneForest3);
     })
 }
@@ -467,7 +539,13 @@ function sceneForest3 () {
     const slobbieForest2 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speecbubbleforest3 = new Blocks.Image("Bilder/Snakkebobler/speechbubblecardrules2.png", {x:500,y:300,width:500,height:300});
     const cbForest3 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:120,y:550,width:150,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:1010,y:550,width:150,height:150});
+    let sceneForest3audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules2.mp3");
+    Actions.Click(playbutton, () => {
+        sceneForest3audio.play();
+    })
     Actions.Click(cbForest3, () => {
+        sceneForest3audio.pause();
         GaaTil(sceneForest4);
     })
 }
@@ -475,39 +553,47 @@ function sceneForest3 () {
 function sceneForest4 () {
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1280,height:720});
     const chancebackF2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:850,y:175,width:350,height:450});
+    const questionbackF2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:450,y:175,width:350,height:450});
+    const challengebackF2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:350,height:450});
+    const quickhopbuttonS = new Blocks.Image("Bilder/Knapper/quickhopbuttonS.png", {x:1100,y:25,width:150,height:150});
+    const quickhopbuttonM = new Blocks.Image("Bilder/Knapper/quickhopbuttonM.png", {x:920,y:25,width:150,height:150});
+    const cbForest4 =  new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:25,y:25,width:150,height:150});
     Actions.Click(chancebackF2, () => {
         GaaTil(sceneForestChanceFront);
     })
-    const questionbackF2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:450,y:175,width:350,height:450});
     Actions.Click(questionbackF2, () => {
         GaaTil(sceneForestQuestionFront);
     })
-    const challengebackF2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:350,height:450});
     Actions.Click(challengebackF2, () => {
          GaaTil(sceneForestChallengeFront);
     })
-    const cbForest4 =  new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:550,y:25,width:150,height:150});
+    Actions.Click(quickhopbuttonS, () => {
+        GaaTil(sceneSwamp4);
+    })
+    Actions.Click(quickhopbuttonM, () => {
+        GaaTil(sceneMountain4);
+    })
     Actions.Click(cbForest4, () => {
         GaaTil(scene13);
     })
 }
 
-// FORESTCARDS
+// FORESTMAP - CARDS - FRONTS
 
 function sceneForestChallengeFront () {
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1280,height:720});
-    const challenge1 = new Blocks.Image("Bilder/KortKlare/Forest/Challenge/chCardBearSleep.png", {x:30,y:10,width:1200,height:700});
+    const challenge1 = new Blocks.Image("Bilder/KortKlare/Forest/Challenge/chCardFBearSleep.png", {x:30,y:10,width:1200,height:700}); //DETTE ER EKSEMPELKORT I BRUK
     const cbForestChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
     const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:1060,y:550,width:150,height:150});
     const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", {x:550,y:20,width:150,height:150});
     Actions.Click(startbuttonCards, () => {
         chCardBearSleepText.pause();
         chCardBearSleepSong.play();
-        GaaTil(chCardBearSleepChallenge);
+        GaaTil(chCardFBearSleepChallenge);
     })
     Actions.Click(playbutton, () => {
-        chCardBearSleepText.play();
-    });
+        chCardFBearSleepText.play();
+    })
     Actions.Click(cbForestChallengeFront, () => {
         chCardBearSleepText.pause();
         GaaTil(sceneForest4);
@@ -516,27 +602,74 @@ function sceneForestChallengeFront () {
 
 function sceneForestQuestionFront () {
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1280,height:720});
-    const questionFront = new Blocks.Image("Bilder/Kort/questionfront.png", {x:30,y:10,width:1200,height:700});
+    const questionFront = new Blocks.Image("Bilder/KortKlare/Forest/Question/qCardFCamoTroll.png", {x:30,y:10,width:1200,height:700}); //DETTE ER EKSEMPELKORT I BRUK
     const cbForestQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:1060,y:550,width:150,height:150});
+    const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", {x:550,y:20,width:150,height:150});
+    Actions.Click(startbuttonCards, () => {
+        qCardFCamoTrollText.pause();
+        GaaTil(qCardFCamoTrollQuestion1);
+    })
+    Actions.Click(playbutton, () => {
+        qCardFCamoTrollText.play();
+    })
     Actions.Click(cbForestQuestionFront, () => {
+        qCardFCamoTrollText.pause();
         GaaTil(sceneForest4);
     })
 }
 
 function sceneForestChanceFront () {
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1280,height:720});
-    const chanceFront = new Blocks.Image("Bilder/Kort/chancefront.png", {x:30,y:10,width:1200,height:700});
+    const chanceFront = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF3.png", {x:30,y:10,width:1200,height:700}); //DETTE ER EKSEMPELKORT I BRUK
     const cbForestChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});
     Actions.Click(cbForestChanceFront, () => {
         GaaTil(sceneForest4);
     })
 }
 
-// CHALLENGEMAPS
+// FORESTMAP - CARDMAPS - CHALLENGES/QUESTIONS/CHANCES
 
-function chCardBearSleepChallenge () {
+function chCardFBearSleepChallenge () {
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1280,height:720});
     const bearSleep = new Blocks.Image("Bilder/Karakterer/bearSleep.png", {x:900,y:450,width:300,height:200});
-    const slobbieSneaky = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:-225,y:500,width:300,height:400});
+    //const slobbieSneaky = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:-225,y:500,width:300,height:400});
+    const backbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:550,y:20,width:150,height:150});
+    Actions.Click(backbutton, () => {
+        chCardBearSleepSong.pause();
+        GaaTil(sceneForest4);
+    })
 
+}
+
+function qCardFCamoTrollQuestion1 () {
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1280,height:720});
+    const rock1 = new Blocks.Image("Bilder/Oppgaver/rock1.png", {x:100,y:450,width:100,height:40});
+    const rock2 = new Blocks.Image("Bilder/Oppgaver/rock2.png", {x:300,y:575,width:200,height:200});
+    const rock3 = new Blocks.Image("Bilder/Oppgaver/rock3.png", {x:1000,y:500,width:100,height:75});
+    const rock4 = new Blocks.Image("Bilder/Oppgaver/rock4.png", {x:600,y:400,width:75,height:75});
+    const trollfaceback = new Blocks.Image("Bilder/Karakterer/trollfaceback.png", {x:1175,y:425,width:50,height:50});
+    Actions.Click(trollfaceback, () => {
+        GaaTil(qCardFCamoTrollQuestion2);
+    })
+}   
+
+function qCardFCamoTrollQuestion2 () {
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1280,height:720});
+    const rock1 = new Blocks.Image("Bilder/Oppgaver/rock1.png", {x:100,y:450,width:100,height:40});
+    const rock2 = new Blocks.Image("Bilder/Oppgaver/rock2.png", {x:300,y:575,width:200,height:200});
+    const rock3 = new Blocks.Image("Bilder/Oppgaver/rock3.png", {x:1000,y:500,width:100,height:75});
+    const rock4 = new Blocks.Image("Bilder/Oppgaver/rock4.png", {x:600,y:400,width:75,height:75});
+    const trollfacefront = new Blocks.Image("Bilder/Karakterer/trollfacefront.png", {x:1175,y:425,width:50,height:50});
+    const trollfaceSpeechBubble = new Blocks.Image("Bilder/Snakkebobler/speechbubbletrollfacefront.png", {x:1075,y:300,width:200,height:150});
+    const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:1075,y:25,width:150,height:150});
+    const exitbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:25,width:150,height:150});
+    let sceneqCardFCamoTrollQuestion2 = new Audio("Lydfiler/SpeechBubbles/sceneqCardFCamoTrollQuestion2.mp3");
+    Actions.Click(playbutton, () => {
+        sceneqCardFCamoTrollQuestion2.play();
+    })
+    Actions.Click(exitbutton, () => {
+        sceneqCardFCamoTrollQuestion2.pause();
+        GaaTil(sceneForest4);
+    })
 }
