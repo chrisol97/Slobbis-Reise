@@ -64,11 +64,6 @@ function scene0() {
 
 function scene1() {
     const titlescreen = new Blocks.Image("Bilder/Bakgrunner/titlescreen.jpg", {x:0,y:0,width:1280,height:720});
-    const skipbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:750,y:250,width:150,height:150});
-Actions.Click(skipbutton, () => {
-        titlescreenmusic.pause();
-        GaaTil(qCardFCamoTrollQuestion1);
-})
     const startbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:250,y:250,width:150,height:150});
     Actions.Click(startbutton, () => {
         GaaTil(scene3);
@@ -587,7 +582,7 @@ function sceneForestChallengeFront () {
     const playbutton = new Blocks.Image("Lydfiler/speechbutton.png", {x:1060,y:550,width:150,height:150});
     const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", {x:550,y:20,width:150,height:150});
     Actions.Click(startbuttonCards, () => {
-        chCardBearSleepText.pause();
+        chCardFBearSleepText.pause();
         chCardBearSleepSong.play();
         GaaTil(chCardFBearSleepChallenge);
     })
@@ -595,7 +590,7 @@ function sceneForestChallengeFront () {
         chCardFBearSleepText.play();
     })
     Actions.Click(cbForestChallengeFront, () => {
-        chCardBearSleepText.pause();
+        chCardFBearSleepText.pause();
         GaaTil(sceneForest4);
     })
 }
