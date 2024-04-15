@@ -62,9 +62,9 @@ let qCardFCamoTrollQuestion2audio = new Audio("Lydfiler/SpeechBubbles/sceneqCard
 
 //FOREST
     //CHALLENGES
-let chCardFBearSleepTextaudio = new Audio("Lydfiler/CardsForest/Challenge/chCardFBearSleepText.mp3");
+let chCardFBearSleepTextaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFBearSleepText.mp3");
     //QUESTIONS
-let qCardFCamoTrollTextaudio = new Audio("Lydfiler/CardsForest/Question/qCardFCamoTrollText.mp3");
+let qCardFCamoTrollTextaudio = new Audio("Lydfiler/Cards/Forest/Question/qCardFCamoTrollText.mp3");
 
 //SWAMP
     //CHALLENGES
