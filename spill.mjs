@@ -56,13 +56,19 @@ let sceneSwamp1audio = new Audio("Lydfiler/SpeechBubbles/sceneSwamp1SpeechBubble
 let sceneForest1audio = new Audio("Lydfiler/SpeechBubbles/sceneForest1SpeechBubble.mp3");
 let sceneCard1audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules1.mp3");
 let sceneCard2audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules2.mp3");
-
+let qCardFCamoTrollQuestion2audio = new Audio("Lydfiler/SpeechBubbles/sceneqCardFCamoTrollQuestion2.mp3");
 
 // LYDER TIL KORT
-let chCardFBearSleepTextaudio = new Audio("Lydfiler/Cards/chCardFBearSleepText.mp3");
-let qCardFCamoTrollTextaudio = new Audio("Lydfiler/Cards/qCardFCamoTrollText.mp3");
-let chCardSHuldraDanceTextaudio = new Audio("Lydfiler/Cards/chCardSHuldraDanceText.mp3");
-let qCardFCamoTrollQuestion2audio = new Audio("Lydfiler/SpeechBubbles/sceneqCardFCamoTrollQuestion2.mp3");
+
+//FOREST
+    //CHALLENGES
+let chCardFBearSleepTextaudio = new Audio("Lydfiler/Cards/Challenge/chCardFBearSleepText.mp3");
+    //QUESTIONS
+let qCardFCamoTrollTextaudio = new Audio("Lydfiler/Cards/Question/qCardFCamoTrollText.mp3");
+
+//SWAMP
+    //CHALLENGES
+
 
 
 Start(scene0);
@@ -322,34 +328,161 @@ function sceneMountain4 () {
     })
 }
 
-// MOUNTAINCARDS
+// MOUNTAINMAP - CARDS - FRONTS
 
+
+//CHALLENGES
 function sceneMountainChallengeFront () {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
-    const challengeFront = new Blocks.Image("Bilder/Kort/challengefrontempty.png", {x:30,y:10,width:1020,height:700});
-    const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:80,y:550,width:150,height:150});
-    Actions.Click(cbMountainChallengeFront, () => {
-        GaaTil(sceneMountain4)
-    })
+    let tall = Math.floor(Math.random() * 7);
+    if (tall === 0) {
+        const challenge0 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMBuildBricks.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChallengeFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 1) {
+        const challenge1 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMBuildBridge.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChallengeFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 2) {
+        const challenge3 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMElfShield.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChallengeFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 3) {
+        const challenge4 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMHighestMountain.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChallengeFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 4) {
+        const challenge5 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMLonelyTroll.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChallengeFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 5) {
+        const challenge6 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMMountainElfSing.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChallengeFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 6) {
+        const challenge7 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMCampfire.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChallengeFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    }
 }
 
+//HUSK Å LEGGE TIL OPPGAVER DER DET TRENGS
+
+//QUESTIONS
 function sceneMountainQuestionFront () {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
-    const questionFront = new Blocks.Image("Bilder/Kort/questionfrontempty.png", {x:30,y:10,width:1020,height:700});
-    const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});
-    Actions.Click(cbMountainQuestionFront, () => {
-        GaaTil(sceneMountain4)
-    })
+    let tall = Math.floor(Math.random() * 6);
+    if (tall === 0) {
+        const question0 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMAskeladdenCastle.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainQuestionFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 1) {
+        const question1 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMFogCatHide.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainQuestionFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 2) {
+        const question2 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMFogCatPrints.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainQuestionFront, () => {
+            GaaTil(sceneMountain4); 
+        })
+    } else if (tall === 3) {
+        const question3 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMSlobbieHide.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainQuestionFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 4) {
+        const question4 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMSteepHill.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainQuestionFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 5) {
+        const question5 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMWhoDoesntBelong.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainQuestionFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    }
 }
 
+//HUSK Å LEGGE TIL OPPGAVER DER DET TRENGS
+
+//CHANCE
 function sceneMountainChanceFront () {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
-    const chanceFront = new Blocks.Image("Bilder/Kort/chancefrontempty.png", {x:30,y:10,width:1020,height:700});
-    const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});
-    Actions.Click(cbMountainChanceFront, () => {
-        GaaTil(sceneMountain4)
-    })
+    let tall = Math.floor(Math.random() * 8);
+    if (tall === 0) {
+        const chance0 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM1.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChanceFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 1) {
+        const chance1 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM2.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChanceFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 2) {
+        const chance2 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM3.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChanceFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 3) {
+        const chance3 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM4.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChanceFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 4) {
+        const chance4 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM5.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChanceFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 5) {
+        const chance5 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardMTrollScare.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChanceFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 6) {
+        const chance6 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chancecardX.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChanceFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    } else if (tall === 7) {
+        const chance7 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chancecardY.png", {x:30,y:10,width:1020,height:700});
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
+        Actions.Click(cbMountainChanceFront, () => {
+            GaaTil(sceneMountain4);
+        })
+    }
 }
+
+// HUSK Å LEGGE TIL OPPGAVER DER DET ER NØDVENDIG
 
 // SWAMPMAP
 
