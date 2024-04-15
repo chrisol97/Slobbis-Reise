@@ -27,6 +27,7 @@ const Start = (maal) => {
 - Legge inn oppgaver til alle de forskjellige kortene
 - Importere flere kort
 - Spille inn lydfiler til alle de forskjellige kortene/oppgavene
+- Flytte alle objekter som er "utenfor" skjermen inn på skjermen pga skjermoppløsningsproblemer
 
 */
 // QUICK SKIPBUTTON
