@@ -1411,9 +1411,9 @@ function chCardFBearSleepChallenge () {
     chCardBearSleepSong.play();
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
     const bearSleep = new Blocks.Image("Bilder/Karakterer/bearSleep.png", {x:750,y:600,width:200,height:150});
-    //const slobbieSneaky = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:-25,y:500,width:300,height:400});
+    const slobbieSneaky = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:-25,y:500,width:300,height:400});
     const backbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:475,y:20,width:150,height:150});                // PRØV Å FIKS TWEEN
-    //Actions.Tween(slobbieSneaky, 1, 0); 
+    Actions.Tween(slobbieSneaky, 1, 0); 
     Actions.Click(backbutton, () => {
         chCardBearSleepSong.pause();
         GaaTil(sceneForest4);
