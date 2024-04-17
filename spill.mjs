@@ -24,11 +24,10 @@ const Start = (maal) => {
 
 /* JOBBE MED VIDERE
 - Legge inn reaksjoner på alt som kan trykkes på; typ "Neeeii, ikke helt! Prøv en gang til!" - Gjør hjemme
-- Legge inn animasjon Slobbie som snakker på alle sjansekort
 - Legge inn funksjon for at man kan trykke på låsen for å åpne porter
 - Få til Tween-funksjon
 - Legge inn ambient-noise på de forskjellige områdene??
-- Se på Collison-action
+- Se på Collide-action
 
 */
 // QUICK SKIPBUTTON
@@ -149,13 +148,13 @@ function scene0() {
 }
 
 function scene1() {
-    const titlescreen = new Blocks.Image("Bilder/Bakgrunner/titlescreen2.jpg", {x:0,y:0,width:1080,height:810});
+    const titlescreen = new Blocks.Image("Bilder/Bakgrunner/titlescreen2.jpg", {x:-8,y:-8,width:1088,height:818});
     const fjellheksa = new Blocks.Image("Bilder/Karakterer/fjellheksa.png", {x:150,y:416,width:300,height:400});
     const startbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:215,y:250,width:150,height:150});
     const skipbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:750,y:250,width:150,height:150});
 Actions.Click(skipbutton, () => {
         titlescreenmusic.pause();
-        GaaTil(chCardFBearSleepChallenge);
+        GaaTil(scene8);
     })    
 Actions.Click(startbutton, () => {
         scene3audio.play();
@@ -165,7 +164,7 @@ Actions.Click(startbutton, () => {
 
 function scene3() {
     titlescreenmusic.pause();
-    const avdeling = new Blocks.Image("Bilder/Bakgrunner/avdeling.png", {x:0,y:0,width:1080,height:810});
+    const avdeling = new Blocks.Image("Bilder/Bakgrunner/avdeling.png", {x:-8,y:-8,width:1088,height:818});
     const slobbieavdeling = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:500,y:300,width:200,height:300, loop:true, auto:true});
     const speechbubbleavdeling = new Blocks.Image("Bilder/Snakkebobler/speechbubbleavdeling.png", {x:400,y:100,width:500,height:300});
     const cbscene3 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
@@ -181,7 +180,7 @@ function scene3() {
 
 function scene4() {
     scene3audio.pause();
-    const garderobe = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:0,y:0,width:1080,height:810});
+    const garderobe = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:-8,y:-8,width:1088,height:818});
     const slobbiegarderobe = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png",], {x:450,y:450,width:250,height:400, loop:true, auto:true});
     const blshoe1 = new Blocks.Image("Bilder/Oppgaver/blueshoe.png", {x:675,y:550,width:60,height:85});
     const gshoe1 = new Blocks.Image("Bilder/Oppgaver/greenshoe.png", {x:350,y:700,width:100,height:67});
@@ -197,7 +196,7 @@ function scene4() {
 
 function scene5() {
     scene4audio.pause();
-    const garderobespill = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:0,y:0,width:1080,height:810});
+    const garderobespill = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:-8,y:-8,width:1088,height:818});
     const blshoe2 = new Blocks.Image("Bilder/Oppgaver/blueshoe.png", {x:675,y:550,width:60,height:85});
     const blshoe3 = new Blocks.Image("Bilder/Oppgaver/blueshoe.png", {x:400,y:550,width:60,height:85});
     const gshoe2 = new Blocks.Image("Bilder/Oppgaver/greenshoe.png", {x:600,y:355,width:100,height:67});
@@ -226,7 +225,7 @@ function scene5() {
 }
 
 function scene6 () {
-    const garderobe1 = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:0,y:0,width:1080,height:810});
+    const garderobe1 = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:-8,y:-8,width:1088,height:818});
     const slobbiegarderobe1 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmup.png", "Bilder/Karakterer/slobbiearmup.png", "Bilder/Karakterer/slobbiearmup.png", "Bilder/Karakterer/slobbiearmupopenmouth.png",], {x:400,y:350,width:300,height:500, loop:true, auto:true});
     const speechbubblegarderobe1 = new Blocks.Image("Bilder/Snakkebobler/speechbubblegarderobe1.png", {x:400,y:200,width:500,height:300});
     const cbscene6 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
@@ -238,7 +237,7 @@ function scene6 () {
 
 function scene7 () {
     scene7audio.play();
-    const closedgate = new Blocks.Image("Bilder/Bakgrunner/closedgate.png", {x:0,y:0,width:1080,height:810});
+    const closedgate = new Blocks.Image("Bilder/Bakgrunner/closedgate.png", {x:-8,y:-8,width:1088,height:818});
     const slobbieclosedgate = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmup.png","Bilder/Karakterer/slobbiearmup.png", "Bilder/Karakterer/slobbiearmup.png", "Bilder/Karakterer/slobbiearmupopenmouth.png",], {x:500,y:475,width:300,height:400, loop:true, auto:true});
     const speechbubbleclosedgate = new Blocks.Image("Bilder/Snakkebobler/speechbubbleclosedgate.png", {x:475,y:300,width:500,height:300});
     const cbscene7 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:45,y:180,width:150,height:150});
@@ -249,15 +248,26 @@ function scene7 () {
 }
 
 function scene8 () {
-    const closedgate2 = new Blocks.Image("Bilder/Bakgrunner/closedgatekeyless.png", {x:0,y:0,width:1080,height:810});
+    const closedgate2 = new Blocks.Image("Bilder/Bakgrunner/closedgatekeyless.png", {x:-8,y:-8,width:1088,height:818});
     const frameforkey = new Blocks.Image("Bilder/Oppgaver/frameforkey.png", {x:265,y:75,width:550,height:325});
-    const brokenkeyback = new Blocks.Image("Bilder/Oppgaver/brokenkeyback.png", {x:850,y:550,width:200,height:200});
-    const brokenkeyfront = new Blocks.Image("Bilder/Oppgaver/brokenkeyfront.png", {x:25,y:50,width:200,height:200});
-    const brokenkeymiddle = new Blocks.Image("Bilder/Oppgaver/brokenkeymiddle.png", {x:880,y:20,width:200,height:200});
+    let brokenkeyback = new Blocks.Image("Bilder/Oppgaver/brokenkeyback.png", {x:850,y:550,width:200,height:200});
+    let brokenkeyfront = new Blocks.Image("Bilder/Oppgaver/brokenkeyfront.png", {x:25,y:50,width:200,height:200});
+    let brokenkeymiddle = new Blocks.Image("Bilder/Oppgaver/brokenkeymiddle.png", {x:880,y:20,width:200,height:200});
+    const lock = new Blocks.Image("Bilder/Oppgaver/lock.png", {x:386,y:508,width:300,height:224});
     const cbscene8 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:45,y:550,width:150,height:150});
     Actions.Drag(brokenkeyback);
     Actions.Drag(brokenkeyfront);
     Actions.Drag(brokenkeymiddle);
+    /*TODO if (Actions.Colide(brokenkeyback, brokenkeymiddle) && Actions.Colide(brokenkeymiddle, brokenkeyfront)) {
+        brokenkeyback.hide();
+        brokenkeyfront.hide();
+        brokenkeymiddle.hide();
+        console.log(Actions.Colide(brokenkeyback, brokenkeymiddle));
+        console.log(Actions.Colide(brokenkeymiddle, brokenkeyfront));                   // SE PÅ DETTE
+    }*/
+    Actions.Click(lock, () => {
+        GaaTil(scene9);
+    })
     Actions.Click(cbscene8, () => {
         GaaTil(scene9);
     })
@@ -265,7 +275,7 @@ function scene8 () {
 
 function scene9 () {
     scene9audio.play();
-    const opengate = new Blocks.Image("Bilder/Bakgrunner/opengate.png", {x:0,y:0,width:1080,height:810});
+    const opengate = new Blocks.Image("Bilder/Bakgrunner/opengate.png", {x:-8,y:-8,width:1088,height:818});
     const slobbieopengate = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmup.png","Bilder/Karakterer/slobbiearmup.png", "Bilder/Karakterer/slobbiearmup.png", "Bilder/Karakterer/slobbiearmupopenmouth.png",], {x:450,y:450,width:275,height:425, loop:true, auto:true});
     const speechbubbleopengate = new Blocks.Image("Bilder/Snakkebobler/speechbubbleopengate.png", {x:420,y:320,width:500,height:300});
     const cbscene9 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
@@ -277,7 +287,7 @@ function scene9 () {
 
 function scene10 () {
     scene10audio.play();
-    const village = new Blocks.Image("Bilder/Bakgrunner/village.jpg", {x:0,y:0,width:1080,height:810});
+    const village = new Blocks.Image("Bilder/Bakgrunner/village.jpg", {x:-8,y:-8,width:1088,height:818});
     const slobbievillage = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:300,y:350,width:325,height:450, loop:true, auto:true});
     const speechbubblevillage = new Blocks.Image("Bilder/Snakkebobler/speechbubblevillage.png", {x:290,y:230,width:500,height:300});
     const cbscene10 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
@@ -288,7 +298,7 @@ function scene10 () {
 }
 
 function scene11 () {
-    const village1 = new Blocks.Image("Bilder/Bakgrunner/village.jpg", {x:0,y:0,width:1080,height:810});
+    const village1 = new Blocks.Image("Bilder/Bakgrunner/village.jpg", {x:-8,y:-8,width:1088,height:818});
     const slobbievillage1 = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:300,y:350,width:325,height:450});
     const arrowgreen = new Blocks.Image("Bilder/Knapper/arrowgreen.png", {x:450,y:440,width:400,height:230});
     Actions.Click(arrowgreen, () => {
@@ -300,7 +310,7 @@ function scene11 () {
 
 function scene12 () {
     scene12audio.play();
-    const veivalg = new Blocks.Image("Bilder/Bakgrunner/veivalg.png", {x:0,y:0,width:1080,height:810});
+    const veivalg = new Blocks.Image("Bilder/Bakgrunner/veivalg.png", {x:-8,y:-8,width:1088,height:818});
     const slobbieveivalg = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png",], {x:345,y:400,width:400,height:500, loop:true, auto:true});
     const speechbubbleveivalg = new Blocks.Image("Bilder/Snakkebobler/speechbubbleveivalg.png", {x:400,y:300,width:500,height:300});
     const cbscene12 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
@@ -311,13 +321,13 @@ function scene12 () {
 }
 
 function scene13 () {
-    const veivalg2 = new Blocks.Image("Bilder/Bakgrunner/veivalg.png", {x:0,y:0,width:1080,height:810});
+    const veivalg2 = new Blocks.Image("Bilder/Bakgrunner/veivalg.png", {x:-8,y:-8,width:1088,height:818});
     const continuebuttonMountain = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:95,y:550,width:150,height:150});
     const continuebuttonSwamp = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:465,y:550,width:150,height:150});
     const continuebuttonForest = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:835,y:550,width:150,height:150});
     const nameplateForest = new Blocks.Image("Bilder/Bakgrunner/forestnameplate.png", {x:735,y:50,width:350,height:200});
     const nameplateSwamp = new Blocks.Image("Bilder/Bakgrunner/swampnameplate.png", {x:367,y:50,width:350,height:200});
-    const nameplateMountain = new Blocks.Image("Bilder/Bakgrunner/mountainnameplate.png", {x:-5,y:50,width:350,height:200});
+    const nameplateMountain = new Blocks.Image("Bilder/Bakgrunner/mountainnameplate.png", {x:-8,y:50,width:350,height:200});
     Actions.Click(continuebuttonMountain, () => {
         GaaTil(sceneMountain1);
     })
@@ -333,7 +343,7 @@ function scene13 () {
 
 function sceneMountain1 () {
     sceneMountain1audio.play();
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const slobbiemountain1 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speechbubblemountain1 = new Blocks.Image("Bilder/Snakkebobler/speechbubblemountain1.png", {x:500,y:300,width:500,height:300});
     const cbMountain1 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
@@ -345,7 +355,7 @@ function sceneMountain1 () {
 
 function sceneMountain2 () {
     sceneCard1audio.play();
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const chanceback2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:730,y:175,width:300,height:450});
     const questionback2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:390,y:175,width:300,height:450});
     const challengeback2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:300,height:450});
@@ -360,7 +370,7 @@ function sceneMountain2 () {
 
 function sceneMountain3 () {
     sceneCard2audio.play();
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const chanceback2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:730,y:175,width:300,height:450});
     const questionback2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:390,y:175,width:300,height:450});
     const challengeback2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:300,height:450});
@@ -374,7 +384,7 @@ function sceneMountain3 () {
 }
 
 function sceneMountain4 () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const chanceback2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:730,y:175,width:300,height:450});
     const questionback2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:390,y:175,width:300,height:450});
     const challengeback2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:300,height:450});
@@ -410,7 +420,7 @@ function sceneMountain4 () {
 
 //CHALLENGES
 function sceneMountainChallengeFront () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     let tall = Math.floor(Math.random() * 7);
     if (tall === 0) {
         chCardMBuildBricksaudio.play();
@@ -493,7 +503,7 @@ function sceneMountainChallengeFront () {
 
 //QUESTIONS
 function sceneMountainQuestionFront () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     let tall = Math.floor(Math.random() * 6);
     if (tall === 0) {
         qCardMAskeladdenCastleaudio.play();
@@ -580,7 +590,7 @@ function sceneMountainQuestionFront () {
 
 //CHANCE
 function sceneMountainChanceFront () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     let tall = Math.floor(Math.random() * 7);
     if (tall === 0) {
         chanceCardM1audio.play();
@@ -658,7 +668,7 @@ function sceneMountainChanceFront () {
 
 function sceneSwamp1 () {
     sceneSwamp1audio.play();
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const slobbieSwamp1 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speechbubbleswamp2 = new Blocks.Image("Bilder/Snakkebobler/speechbubbleswamp1.png", {x:500,y:300,width:500,height:300});
     const cbSwamp1 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
@@ -670,7 +680,7 @@ function sceneSwamp1 () {
 
 function sceneSwamp2 () {
     sceneCard1audio.play();
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const chanceback2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:730,y:175,width:300,height:450});
     const questionback2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:390,y:175,width:300,height:450});
     const challengeback2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:300,height:450});
@@ -684,7 +694,7 @@ function sceneSwamp2 () {
 }
 function sceneSwamp3 () {
     sceneCard2audio.play();
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const chanceback2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:730,y:175,width:300,height:450});
     const questionback2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:390,y:175,width:300,height:450});
     const challengeback2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:300,height:450});
@@ -698,7 +708,7 @@ function sceneSwamp3 () {
 }
 
 function sceneSwamp4 () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const chanceback2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:730,y:175,width:300,height:450});
     const questionback2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:390,y:175,width:300,height:450});
     const challengeback2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:300,height:450});
@@ -734,7 +744,7 @@ function sceneSwamp4 () {
 // CHALLENGES
 
 function sceneSwampChallengeFront () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     let tall = Math.floor(Math.random() * 6);
     if (tall === 0) {
         chCardSEarwaxCandleaudio.play();
@@ -807,7 +817,7 @@ function sceneSwampChallengeFront () {
 // QUESTIONS
 
 function sceneSwampQuestionFront () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     let tall = Math.floor(Math.random() * 6);
     if (tall === 0) {
         qCardSCountCrocoaudio.play();
@@ -896,7 +906,7 @@ function sceneSwampQuestionFront () {
 //CHANCES
 
 function sceneSwampChanceFront () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     let tall = Math.floor(Math.random() * 6);
     if (tall === 0) {
         chanceCardS1audio.play();
@@ -961,7 +971,7 @@ function sceneSwampChanceFront () {
 
 function sceneForest1 () {
     sceneForest1audio.play();
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const slobbieforest1 = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:450,y:400,width:400,height:500, loop:true, auto:true});
     const speechbubbleforest1 = new Blocks.Image("Bilder/Snakkebobler/speechbubbleforest1.png", {x:500,y:300,width:500,height:300});
     const cbForest1 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:175,y:200,width:150,height:150});
@@ -973,7 +983,7 @@ function sceneForest1 () {
 
 function sceneForest2 () {
     sceneCard1audio.play();
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const chanceback2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:730,y:175,width:300,height:450});
     const questionback2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:390,y:175,width:300,height:450});
     const challengeback2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:300,height:450});
@@ -987,7 +997,7 @@ function sceneForest2 () {
 }
 function sceneForest3 () {
     sceneCard2audio.play();
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const chanceback2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:730,y:175,width:300,height:450});
     const questionback2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:390,y:175,width:300,height:450});
     const challengeback2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:300,height:450});
@@ -1001,7 +1011,7 @@ function sceneForest3 () {
 }
 
 function sceneForest4 () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const chanceback2 = new Blocks.Image("Bilder/Kort/chanceback.png", {x:730,y:175,width:300,height:450});
     const questionback2 = new Blocks.Image("Bilder/Kort/questionback.png", {x:390,y:175,width:300,height:450});
     const challengeback2 = new Blocks.Image("Bilder/Kort/challengeback.png", {x:50,y:175,width:300,height:450});
@@ -1036,7 +1046,7 @@ function sceneForest4 () {
 
 // CHALLENGES
 function sceneForestChallengeFront () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     let tall = Math.floor(Math.random() * 6);
     if (tall === 0) {
         chCardFBiggestTrollaudio.play();
@@ -1118,7 +1128,7 @@ function sceneForestChallengeFront () {
 
 // QUESTIONS
 function sceneForestQuestionFront () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     let tall = Math.floor(Math.random() * 4);
     if (tall === 0) {
         qCardFCamoTrollTextaudio.play();
@@ -1176,7 +1186,7 @@ function sceneForestQuestionFront () {
 }
 // CHANCES
 function sceneForestChanceFront () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     let tall = Math.floor(Math.random() * 6);
     if (tall === 0) {
         chanceCardF1audio.play();
@@ -1250,8 +1260,8 @@ function sceneForestChanceFront () {
 
 //CHALLENGES
 function chCardMBuildBricksChallenge () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
-    const mountain1 = new Blocks.Image("Bilder/Oppgaver/mountain.png", {x:0,y:266,width:400,height:550});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
+    const mountain1 = new Blocks.Image("Bilder/Oppgaver/mountain.png", {x:-8,y:266,width:400,height:550});
     const brick1 = new Blocks.Image("Bilder/Oppgaver/brick.png", {x:800,y:660,width:150,height:150});
     const brick2 = new Blocks.Image("Bilder/Oppgaver/brick.png", {x:400,y:660,width:150,height:150});
     const brick3 = new Blocks.Image("Bilder/Oppgaver/brick.png", {x:603,y:659,width:150,height:150});
@@ -1268,7 +1278,7 @@ function chCardMBuildBricksChallenge () {
 }
 
 function chCardMBuildBridgeChallenge () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const challengemap = new Blocks.Image("Bilder/Oppgaver/buildBridgeBackground.png", {x:50,y:100,width:960,height:700});
     const shadowbear = new Blocks.Image("Bilder/Karakterer/shadowbear.png", {x:750,y:500,width:200,height:250});
     const plank1 = new Blocks.Image("Bilder/Oppgaver/plank.png", {x:76,y:150,width:200,height:200})
@@ -1286,7 +1296,7 @@ function chCardMBuildBridgeChallenge () {
 }
 
 function chCardMCampfireChallenge1 () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const wood1 = new Blocks.Image("Bilder/Oppgaver/wood1.png", {x:77,y:472,width:150,height:100});
     const wood2 = new Blocks.Image("Bilder/Oppgaver/wood2.png", {x:858,y:430,width:150,height:100});
     const stick1 = new Blocks.Image("Bilder/Oppgaver/stick.png", {x:71,y:12,width:250,height:150});
@@ -1306,7 +1316,7 @@ function chCardMCampfireChallenge1 () {
 }
 
 function chCardMCampfireChallenge2 () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const wood1 = new Blocks.Image("Bilder/Oppgaver/wood1.png", {x:526,y:609,width:150,height:100});
     const stick1 = new Blocks.Image("Bilder/Oppgaver/stick.png", {x:419,y:558,width:250,height:150});
     const flame = new Blocks.Image("Bilder/Oppgaver/flame.png", {x:450,y:420,width:200,height:250});
@@ -1318,8 +1328,8 @@ function chCardMCampfireChallenge2 () {
 }
 
 function chCardMHighestMountainChallenge () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
-    const mountain1 = new Blocks.Image("Bilder/Oppgaver/mountain.png", {x:0,y:415,width:300,height:400});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
+    const mountain1 = new Blocks.Image("Bilder/Oppgaver/mountain.png", {x:-8,y:415,width:300,height:400});
     const mountain2 = new Blocks.Image("Bilder/Oppgaver/mountain.png", {x:320,y:520,width:150,height:300});
     const mountain3 = new Blocks.Image("Bilder/Oppgaver/mountain.png", {x:500,y:370,width:200,height:450});
     const mountain4 = new Blocks.Image("Bilder/Oppgaver/mountain.png", {x:700,y:435,width:400,height:380});
@@ -1331,8 +1341,8 @@ function chCardMHighestMountainChallenge () {
 // QUESTIONS
 
 function qCardMAskeladdenCastleQuestion () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
-    const soriamoriaroad = new Blocks.Image("Bilder/Oppgaver/soriamoriaroad.png", {x:250,y:0,width:600,height:700});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
+    const soriamoriaroad = new Blocks.Image("Bilder/Oppgaver/soriamoriaroad.png", {x:250,y:-8,width:600,height:700});
     const soriamoria = new Blocks.Image("Bilder/Oppgaver/soriamoria.png", {x:700,y:20,width:350,height:350});
     const swamp = new Blocks.Image("Bilder/Oppgaver/swamp.png", {x:20,y:20,width:350,height:350});
     Actions.Click(soriamoria, () => {
@@ -1341,7 +1351,7 @@ function qCardMAskeladdenCastleQuestion () {
 }
 
 function qCardMFogCatHideQuestion () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const fogcat1 = new Blocks.Image("Bilder/Karakterer/fogcat.png", {x:20,y:650,width:300,height:300});
     const fogcat2 = new Blocks.Image("Bilder/Karakterer/fogcat.png", {x:700,y:700,width:150,height:150});
     const fogcat3 = new Blocks.Image("Bilder/Karakterer/fogcat.png", {x:800,y:370,width:110,height:140});
@@ -1356,8 +1366,8 @@ function qCardMFogCatHideQuestion () {
 }
 
 function qCardMFogCatPrintsQuestion () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
-    const fogCatsPrintsPicture = new Blocks.Image("Bilder/Oppgaver/fogCatPrintsPicture.png", {x:150,y:0,width:800,height:500});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
+    const fogCatsPrintsPicture = new Blocks.Image("Bilder/Oppgaver/fogCatPrintsPicture.png", {x:150,y:-8,width:800,height:500});
     const fogCatsWrong1 = new Blocks.Image("Bilder/Oppgaver/qMFogCatPrintsWrong1.png", {x:100,y:550,width:200,height:200});
     const fogCatsWrong2 = new Blocks.Image("Bilder/Oppgaver/qMFogCatPrintsWrong2.png", {x:800,y:550,width:200,height:200});
     const fogCatsCorrect = new Blocks.Image("Bilder/Oppgaver/qMFogCatPrintsCorrect.png", {x:450,y:550,width:200,height:200});
@@ -1367,11 +1377,11 @@ function qCardMFogCatPrintsQuestion () {
 }
 
 function qCardMSlobbieHideQuestion () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const slobbie = new Blocks.Image("Bilder/Karakterer/slobbieopenmoutharmup.png", {x:490,y:310,width:150,height:200});
     const rock1 = new Blocks.Image("Bilder/Oppgaver/rock1.png", {x:200,y:680,width:250,height:150});
     const rock2 = new Blocks.Image("Bilder/Oppgaver/rock2.png", {x:800,y:560,width:200,height:150});
-    const rock3 = new Blocks.Image("Bilder/Oppgaver/rock3.png", {x:0,y:400,width:100,height:100});
+    const rock3 = new Blocks.Image("Bilder/Oppgaver/rock3.png", {x:-8,y:400,width:100,height:100});
     const rock4 = new Blocks.Image("Bilder/Oppgaver/rock4.png", {x:520,y:400,width:100,height:100});
     Actions.Click(slobbie, () => {
         GaaTil(sceneMountain4);
@@ -1379,7 +1389,7 @@ function qCardMSlobbieHideQuestion () {
 }
 
 function qCardMSteepHillQuestion () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const steephillcorrect = new Blocks.Image("Bilder/Oppgaver/steephillcorrect.png", {x:50,y:150,width:400,height:300});
     const steephillwrong1 = new Blocks.Image("Bilder/Oppgaver/steephillwrong1.png", {x:450,y:450,width:400,height:300});
     const steephillwrong2 = new Blocks.Image("Bilder/Oppgaver/steephillwrong2.png", {x:600,y:100,width:400,height:300});
@@ -1389,7 +1399,7 @@ function qCardMSteepHillQuestion () {
 }
 
 function qCardMWhoDoesntBelongQuestion () {
-    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
+    const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:-8,y:-8,width:1088,height:818});
     const correctcard = new Blocks.Image("Bilder/Oppgaver/huldrasadCard.png", {x:600,y:100,width:400,height:300});
     const wrongcard1 = new Blocks.Image("Bilder/Oppgaver/shadowbearcard.png", {x:50,y:150,width:400,height:300});
     const wrongcard2 = new Blocks.Image("Bilder/Oppgaver/tinyelfcard.png", {x:450,y:450,width:400,height:300});
@@ -1401,7 +1411,7 @@ function qCardMWhoDoesntBelongQuestion () {
 // CHANCES
 
 function chanceCardMTrollScareMap () {
-    const background = new Blocks.Image("Bilder/Bakgrunner/rockymountain.png", {x:0,y:0,width:1080,height:810});
+    const background = new Blocks.Image("Bilder/Bakgrunner/rockymountain.png", {x:-8,y:-8,width:1088,height:818});
     const hidingtroll = new Blocks.Image("Bilder/Karakterer/lonelytrollhappy.png", {x:450,y:430,width:70,height:100});
     const rock = new Blocks.Image("Bilder/Oppgaver/rock3.png", {x:420,y:480,width:150,height:100});
     Actions.Click(hidingtroll, () => {
@@ -1414,11 +1424,11 @@ function chanceCardMTrollScareMap () {
 // CHALLENGES
 function chCardFBearSleepChallenge () {
     chCardBearSleepSong.play();
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const bearSleep = new Blocks.Image("Bilder/Karakterer/bearSleep.png", {x:750,y:600,width:200,height:150});
-    const slobbieSneaky = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:-25,y:500,width:300,height:400});
-    const backbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:475,y:20,width:150,height:150});                // PRØV Å FIKS TWEEN
-    Actions.Tween(slobbieSneaky, 1, 0); 
+    const slobbieSneaky = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:-100,y:500,width:300,height:400});
+    const backbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:475,y:20,width:150,height:150});                // GÅ TILBAKE TIL DEN
+    Actions.Tween(slobbieSneaky, 1.2, 0);
     Actions.Click(backbutton, () => {
         chCardBearSleepSong.pause();
         GaaTil(sceneForest4);
@@ -1426,7 +1436,7 @@ function chCardFBearSleepChallenge () {
 }
 
 function chCardFBiggestTrollChallenge () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const trollwrong1 = new Blocks.Image("Bilder/Karakterer/trollfacefront.png", {x:780,y:530,width:50,height:50});
     const trollwrong2 = new Blocks.Image("Bilder/Karakterer/trollfacefront.png", {x:30,y:420,width:200,height:200});
     const trollwrong3 = new Blocks.Image("Bilder/Karakterer/trollfacefront.png", {x:400,y:540,width:100,height:100});
@@ -1439,7 +1449,7 @@ function chCardFBiggestTrollChallenge () {
 }
 
 function chCardFRRHFruitBasketChallenge () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const fruitbasket = new Blocks.Image("Bilder/Oppgaver/fruitbasket.png", {x:370,y:525,width:75,height:75});
     const rock1 = new Blocks.Image("Bilder/Oppgaver/rock1.png", {x:400,y:500,width:150,height:150});
     const rock2 = new Blocks.Image("Bilder/Oppgaver/rock3.png", {x:900,y:450,width:150,height:120});
@@ -1449,7 +1459,7 @@ function chCardFRRHFruitBasketChallenge () {
 }
 
 function chCardFSinnataggFacesChallenge () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const sinnataggmad = new Blocks.Image("Bilder/Karakterer/sinnataggangry.png", {x:360,y:200,width:400,height:400});
     Actions.Click(sinnataggmad, () => {
         GaaTil(chCardFSinnataggFacesChallenge2);
@@ -1458,7 +1468,7 @@ function chCardFSinnataggFacesChallenge () {
 
 function chCardFSinnataggFacesChallenge2 () {
     sinnataggLaughaudio.play();
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const sinnatagghappy = new Blocks.Image("Bilder/Karakterer/sinnatagghappy.png", {x:360,y:200,width:400,height:400})
     const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:475,y:10,width:150,height:150});                
     Actions.Click(continuebutton, () => {
@@ -1468,8 +1478,8 @@ function chCardFSinnataggFacesChallenge2 () {
 }
 
 function chCardFTrollChildrenBedChallenge () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
-    const bed = new Blocks.Image("Bilder/Oppgaver/bed.png", {x:-50,y:100,width:1200,height:700});   
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
+    const bed = new Blocks.Image("Bilder/Oppgaver/bed.png", {x:-60,y:100,width:1200,height:700});   
     const troll1 = new Blocks.Image("Bilder/Karakterer/trollchild.png", {x:27,y:567,width:150,height:150});
     const troll2 = new Blocks.Image("Bilder/Karakterer/trollchild.png", {x:908,y:559,width:150,height:150});
     const troll3 = new Blocks.Image("Bilder/Karakterer/trollchild.png", {x:913,y:131,width:150,height:150});
@@ -1489,7 +1499,7 @@ function chCardFTrollChildrenBedChallenge () {
 
 // QUESTIONS
 function qCardFCamoTrollQuestion1 () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const rock1 = new Blocks.Image("Bilder/Oppgaver/rock1.png", {x:100,y:520,width:100,height:40});
     const rock2 = new Blocks.Image("Bilder/Oppgaver/rock2.png", {x:300,y:575,width:200,height:200});
     const rock3 = new Blocks.Image("Bilder/Oppgaver/rock3.png", {x:850,y:700,width:100,height:75});
@@ -1502,7 +1512,7 @@ function qCardFCamoTrollQuestion1 () {
 
 function qCardFCamoTrollQuestion2 () {
     qCardFCamoTrollQuestion2audio.play();
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const rock1 = new Blocks.Image("Bilder/Oppgaver/rock1.png", {x:100,y:520,width:100,height:40});
     const rock2 = new Blocks.Image("Bilder/Oppgaver/rock2.png", {x:300,y:575,width:200,height:200});
     const rock3 = new Blocks.Image("Bilder/Oppgaver/rock3.png", {x:850,y:700,width:100,height:75});
@@ -1517,7 +1527,7 @@ function qCardFCamoTrollQuestion2 () {
 }
 
 function qCardFMikkelRevLetterQuestion () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const wronganswer1 = new Blocks.Image("Bilder/Oppgaver/mikkelrevwrong1.png", {x:50,y:150,width:400,height:300});
     const wronganswer2 = new Blocks.Image("Bilder/Oppgaver/mikkelrevwrong2.png", {x:450,y:450,width:400,height:300});
     const correctanswer = new Blocks.Image("Bilder/Oppgaver/mikkelrevcorrect.png", {x:600,y:100,width:400,height:300});
@@ -1527,7 +1537,7 @@ function qCardFMikkelRevLetterQuestion () {
 }
 
 function qCardFTrollStealPrincessQuestion () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const wronganswer2 = new Blocks.Image("Bilder/Oppgaver/trollstealprincesswrong1.png", {x:450,y:450,width:400,height:300});
     const wronganswer1 = new Blocks.Image("Bilder/Oppgaver/trollstealprincesswrong2.png", {x:600,y:100,width:400,height:300});
     const correctanswer = new Blocks.Image("Bilder/Oppgaver/trollstealprincesscorrect.png", {x:50,y:150,width:400,height:300});
@@ -1537,7 +1547,7 @@ function qCardFTrollStealPrincessQuestion () {
 }
 
 function qCardFWitchWartsQuestion () {
-    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
+    const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:-8,y:-8,width:1088,height:818});
     const witch = new Blocks.Image("Bilder/Karakterer/witchface.png", {x:350,y:10,width:400,height:450});
     const wronganswer1 = new Blocks.Image("Bilder/Oppgaver/witchwartswrong1.png", {x:50,y:550,width:400,height:250});
     const wronganswer2 = new Blocks.Image("Bilder/Oppgaver/witchwartswrong2.png", {x:370,y:550,width:400,height:250});
@@ -1552,7 +1562,7 @@ function qCardFWitchWartsQuestion () {
 // CHALLENGES
 function chCardSHuldraDanceChallenge () {
     chCardSHuldraDanceSong.play();
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const HuldraSad = new Blocks.Image("Bilder/Karakterer/huldrasad.png", {x:350,y:430,width:450,height:450}); 
     const exitbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:475,y:10,width:150,height:150});        
     Actions.Click(exitbutton, () => {
@@ -1562,7 +1572,7 @@ function chCardSHuldraDanceChallenge () {
 }
 
 function chCardSHuldraDanceChallenge1 () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const HuldraHappy = new Blocks.Image("Bilder/Karakterer/huldrahappy.png", {x:350,y:430,width:450,height:450});
     const exitbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:475,y:10,width:150,height:150});
     Actions.Click(exitbutton, () => {
@@ -1572,7 +1582,7 @@ function chCardSHuldraDanceChallenge1 () {
 }
 
 function chCardSEarwaxCandleChallenge () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const earwax1 = new Blocks.Image("Bilder/Oppgaver/earwax.png", {x:100,y:100,width:200,height:200});
     const earwax2 = new Blocks.Image("Bilder/Oppgaver/earwax.png", {x:500,y:200,width:200,height:200});
     const earwax3 = new Blocks.Image("Bilder/Oppgaver/earwax.png", {x:300,y:500,width:200,height:200});
@@ -1590,8 +1600,8 @@ function chCardSEarwaxCandleChallenge () {
 }
 
 function chCardSSlobbieSnakeTree () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
-    const SlobbieTree = new Blocks.Image("Bilder/Oppgaver/slobbiesnaketree.png", {x:0,y:0,width:500,height:700});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
+    const SlobbieTree = new Blocks.Image("Bilder/Oppgaver/slobbiesnaketree.png", {x:-8,y:-8,width:500,height:700});
     const brick1 = new Blocks.Image("Bilder/Oppgaver/brick.png", {x:390,y:706,width:100,height:100});
     const brick2 = new Blocks.Image("Bilder/Oppgaver/brick.png", {x:634,y:712,width:100,height:100});
     const brick3 = new Blocks.Image("Bilder/Oppgaver/brick.png", {x:848,y:710,width:100,height:100});
@@ -1607,7 +1617,7 @@ function chCardSSlobbieSnakeTree () {
 // QUESTIONS
 
 function qCardSCountCrocoQuestion () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const crocoeye1 = new Blocks.Image("Bilder/Karakterer/crocoeyeclosed.png", {x:200,y:430,width:75,height:75});
     const crocoeye2 = new Blocks.Image("Bilder/Karakterer/crocoeyeopen.png", {x:530,y:480,width:80,height:80});
     const crocoeye3 = new Blocks.Image("Bilder/Karakterer/crocoeyeopen.png", {x:440,y:400,width:70,height:70    });
@@ -1622,7 +1632,7 @@ function qCardSCountCrocoQuestion () {
 }
 
 function qCardSFossegrimenLureQuestion () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const correctanswer = new Blocks.Image("Bilder/Oppgaver/fossegrimencorrect.png", {x:50,y:150,width:400,height:300});
     const wronganswer1 = new Blocks.Image("Bilder/Oppgaver/fossegrimenlurewrong1.png", {x:450,y:450,width:400,height:300});
     const wronganswer2 = new Blocks.Image("Bilder/Oppgaver/fossegrimenlurewrong2.png", {x:600,y:100,width:400,height:300});
@@ -1632,7 +1642,7 @@ function qCardSFossegrimenLureQuestion () {
 }
 
 function qCardSFrogEatSlobbieQuestion () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const frogcorrect = new Blocks.Image("Bilder/Oppgaver/frogeatslobbie.png", {x:780,y:270,width:75,height:75});
     const frog1 = new Blocks.Image("Bilder/Karakterer/frog1.png", {x:250,y:350,width:100,height:100});
     const frog2 = new Blocks.Image("Bilder/Karakterer/frog2.png", {x:600,y:250,width:50,height:50});
@@ -1645,8 +1655,8 @@ function qCardSFrogEatSlobbieQuestion () {
 }
 
 function qCardSFrogRiddleQuestion () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
-    const swampriddle = new Blocks.Image("Bilder/Oppgaver/froginswamp.png", {x:200,y:0,width:700,height:500});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
+    const swampriddle = new Blocks.Image("Bilder/Oppgaver/froginswamp.png", {x:200,y:-8,width:700,height:500});
     const riddleanswerwrong = new Blocks.Image("Bilder/Oppgaver/froginswampwrong1.png", {x:200,y:550,width:300,height:200});
     const riddleanswercorrect = new Blocks.Image("Bilder/Oppgaver/froginswampcorrect.png", {x:600,y:550,width:300,height:200});
     Actions.Click(riddleanswercorrect, () => {
@@ -1655,7 +1665,7 @@ function qCardSFrogRiddleQuestion () {
 }
 
 function qCardSHippoBubbaQuestion () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const bubbacard = new Blocks.Image("Bilder/Karakterer/hippobubba.png", {x:300,y:20,width:450,height:400});
     const wrong1 = new Blocks.Image("Bilder/Oppgaver/hippobubbawrong1.png", {x:75,y:450,width:300,height:250});
     const wrong2 = new Blocks.Image("Bilder/Oppgaver/hippobubbawrong2.png", {x:700,y:450,width:300,height:250});
@@ -1666,7 +1676,7 @@ function qCardSHippoBubbaQuestion () {
 }
 
 function qCardSHowManyFrogsQuestion () {
-    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:0,y:0,width:1080,height:810});
+    const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", {x:-8,y:-8,width:1088,height:818});
     const frog1 = new Blocks.Image("Bilder/Karakterer/frog1.png", {x:250,y:350,width:100,height:100});
     const frog2 = new Blocks.Image("Bilder/Karakterer/frog2.png", {x:600,y:250,width:50,height:50});
     const frog3 = new Blocks.Image("Bilder/Karakterer/frog1.png", {x:880,y:420,width:175,height:175});
@@ -1690,8 +1700,8 @@ function qCardSHowManyFrogsQuestion () {
  
 function sceneOutsideMountain () {
     sceneOutsideMountainaudio.play();
-    const background = new Blocks.Image("Bilder/Bakgrunner/outsidemountain.png", {x:-20,y:0,width:1120,height:810});
-    const slobbie = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/KaraktFerer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbieopenmoutharmdown.png"], {x:300,y:450,width:300,height:400, loop:true, auto:true});
+    const background = new Blocks.Image("Bilder/Bakgrunner/outsidemountain.png", {x:-22,y:-8,width:1120,height:818});
+    const slobbie = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbieopenmoutharmdown.png"], {x:300,y:450,width:300,height:400, loop:true, auto:true});
     const speechbubble = new Blocks.Image("Bilder/Snakkebobler/speechbubbleOutsideMountain.png", {x:330,y:320,width:400,height:300});
     const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:45,y:550,width:150,height:150});
     const ForestChanceFront = new Blocks.Image("Bilder/Knapper/quickhopbuttonF.png", {x:675,y:25,width:150,height:150});
@@ -1718,7 +1728,7 @@ function sceneOutsideMountain () {
 
 function sceneInsideMountain () {
     sceneInsideMountainaudio.play();
-    const background = new Blocks.Image("Bilder/Bakgrunner/insidemountain.png", {x:0,y:0,width:1080,height:810});
+    const background = new Blocks.Image("Bilder/Bakgrunner/insidemountain.png", {x:-10,y:-8,width:1090,height:818});
     const slobbie = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbieopenmoutharmdown.png"], {x:450,y:620,width:150,height:200, loop:true, auto:true});
     const speechbubble = new Blocks.Image("Bilder/Snakkebobler/speechbubbleInsideMountain.png", {x:460,y:510,width:200,height:185});
     const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:45,y:550,width:150,height:150});
@@ -1729,7 +1739,7 @@ function sceneInsideMountain () {
 }
 
 function sceneFjellheksHome () {
-    const background = new Blocks.Image("Bilder/Bakgrunner/fjellhekshouse.png", {x:0,y:0,width:1080,height:810});
+    const background = new Blocks.Image("Bilder/Bakgrunner/fjellhekshouse.png", {x:-10,y:-8,width:1095,height:818});
     const slobbie = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:500,y:450,width:300,height:400});
     const speechbubble1 = new Blocks.Image("Bilder/Snakkebobler/speechbubbleFjellheksHomeReverse.png", {x:300,y:160,width:200,height:200});
     const speechbubble2 = new Blocks.Image("Bilder/Snakkebobler/speechbubbleFjellheksHomeSlobbie.png", {x:550,y:300,width:400,height:300});
@@ -1757,7 +1767,7 @@ function sceneEnd () {
 // SCENER "UTENFOR" SPILLET
 
 function sceneVillageX () {
-    const village1 = new Blocks.Image("Bilder/Bakgrunner/village.jpg", {x:0,y:0,width:1080,height:810});
+    const village1 = new Blocks.Image("Bilder/Bakgrunner/village.jpg", {x:-8,y:-8,width:1088,height:818});
     const slobbievillage1 = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:300,y:350,width:325,height:450});
     const arrowgreen = new Blocks.Image("Bilder/Knapper/arrowgreen.png", {x:450,y:440,width:400,height:230});
     Actions.Click(arrowgreen, () => {
@@ -1766,13 +1776,13 @@ function sceneVillageX () {
 }
 
 function sceneVeivalgX () {
-    const veivalg2 = new Blocks.Image("Bilder/Bakgrunner/veivalg.png", {x:0,y:0,width:1080,height:810});
+    const veivalg2 = new Blocks.Image("Bilder/Bakgrunner/veivalg.png", {x:-8,y:-8,width:1088,height:818});
     const continuebuttonMountain = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:95,y:550,width:150,height:150});
     const continuebuttonSwamp = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:465,y:550,width:150,height:150});
     const continuebuttonForest = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:835,y:550,width:150,height:150});
     const nameplateForest = new Blocks.Image("Bilder/Bakgrunner/forestnameplate.png", {x:735,y:50,width:350,height:200});
     const nameplateSwamp = new Blocks.Image("Bilder/Bakgrunner/swampnameplate.png", {x:367,y:50,width:350,height:200});
-    const nameplateMountain = new Blocks.Image("Bilder/Bakgrunner/mountainnameplate.png", {x:-5,y:50,width:350,height:200});
+    const nameplateMountain = new Blocks.Image("Bilder/Bakgrunner/mountainnameplate.png", {x:-8,y:50,width:350,height:200});
     Actions.Click(continuebuttonMountain, () => {
         GaaTil(sceneMountain4);
     })
