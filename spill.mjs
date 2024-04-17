@@ -23,10 +23,12 @@ const Start = (maal) => {
 //#endregion
 
 /* JOBBE MED VIDERE
-- Legge inn reaksjoner på alt som kan trykkes på; typ "Neeeii, ikke helt! Prøv en gang til!"
-- Legge inn animasjon Slobbi som snakker på alle sjansekort
+- Legge inn reaksjoner på alt som kan trykkes på; typ "Neeeii, ikke helt! Prøv en gang til!" - Gjør hjemme
+- Legge inn animasjon Slobbie som snakker på alle sjansekort
 - Legge inn funksjon for at man kan trykke på låsen for å åpne porter
 - Få til Tween-funksjon
+- Legge inn ambient-noise på de forskjellige områdene??
+- 
 
 */
 // QUICK SKIPBUTTON
@@ -43,7 +45,7 @@ Actions.Click(skipbutton, () => {
 
 
 // SNAKKEBOBLER
-    let scene3audio = new Audio("Lydfiler/SpeechBubbles/scene3SpeechBubble.mp3");
+    let scene3audio = new Audio("Lydfiler/SpeechBubbles/scene3SpeechBubble.mp3", {loop:true, auto:false});
     let scene4audio = new Audio("Lydfiler/SpeechBubbles/scene4SpeechBubble.mp3");
     let scene6audio = new Audio("Lydfiler/SpeechBubbles/scene6SpeechBubble.mp3");
     let scene7audio = new Audio("Lydfiler/SpeechBubbles/scene7SpeechBubble.mp3");
@@ -153,7 +155,7 @@ function scene1() {
     const skipbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:750,y:250,width:150,height:150});
 Actions.Click(skipbutton, () => {
         titlescreenmusic.pause();
-        GaaTil(chCardFBearSleepChallenge);
+        GaaTil(sceneFjellheksHome);
     })    
 Actions.Click(startbutton, () => {
         scene3audio.play();
@@ -583,6 +585,7 @@ function sceneMountainChanceFront () {
     if (tall === 0) {
         chanceCardM1audio.play();
         const chance0 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM1.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});         // FERDIG 
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardM1audio.pause();
@@ -591,6 +594,7 @@ function sceneMountainChanceFront () {
     } else if (tall === 1) {
         chanceCardM2audio.play();
         const chance1 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM2.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});         // FERDIG 
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardM2audio.pause();
@@ -599,6 +603,7 @@ function sceneMountainChanceFront () {
     } else if (tall === 2) {
         chanceCardM3audio.play();
         const chance2 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM3.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});         // FERDIG 
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardM3audio.pause();
@@ -607,6 +612,7 @@ function sceneMountainChanceFront () {
     } else if (tall === 3) {
         chanceCardM4audio.play();
         const chance3 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM4.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});         // FERDIG 
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardM4audio.pause();
@@ -615,6 +621,7 @@ function sceneMountainChanceFront () {
     } else if (tall === 4) {
         chanceCardM5audio.play();
         const chance4 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM5.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});         // FERDIG 
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardM5audio.pause();
@@ -623,6 +630,7 @@ function sceneMountainChanceFront () {
     } else if (tall === 5) {
         chanceCardMTrollScareaudio.play();
         const chance5 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardMTrollScare.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});
         const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", {x:475,y:10,width:150,height:150});             // FERDIG 
         Actions.Click(startbuttonCard, () => {
@@ -636,6 +644,7 @@ function sceneMountainChanceFront () {
     } else if (tall === 6) {
         chanceCardYaudio.play();
         const chance7 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chancecardY.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});         // FERDIG 
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardYaudio.pause();
@@ -892,6 +901,7 @@ function sceneSwampChanceFront () {
     if (tall === 0) {
         chanceCardS1audio.play();
         const chance0 = new Blocks.Image("Bilder/KortKlare/Swamp/Chance/chanceCardS1.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});                // FERDIG 
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardS1audio.pause();
@@ -900,6 +910,7 @@ function sceneSwampChanceFront () {
     } else if (tall === 1) {
         chanceCardS2audio.play();
         const chance1 = new Blocks.Image("Bilder/KortKlare/Swamp/Chance/chanceCardS2.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});                // FERDIG 
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardS2audio.pause();
@@ -908,6 +919,7 @@ function sceneSwampChanceFront () {
     } else if (tall === 2) {
         chanceCardF4audio.play();
         const chance2 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF4.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});                // FERDIG - 
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardF4audio.pause();
@@ -916,6 +928,7 @@ function sceneSwampChanceFront () {
     } else if (tall === 3) {
         chanceCardF5audio.play();
         const chance3 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF5.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});                // FERDIG - 
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardF5audio.pause();
@@ -924,6 +937,7 @@ function sceneSwampChanceFront () {
     } else if (tall === 4) {
         chanceCardF6audio.play();
         const chance4 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF6.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});                // FERDIG - 
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardF6audio.pause();
@@ -932,6 +946,7 @@ function sceneSwampChanceFront () {
     } else if (tall === 5) {
         chanceCardS3audio.play();
         const chance5 = new Blocks.Image("Bilder/KortKlare/Swamp/Chance/chanceCardS3.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:35,y:565,width:150,height:150});                // FERDIG - 
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardS3audio.pause();
