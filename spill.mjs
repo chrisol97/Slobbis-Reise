@@ -155,7 +155,7 @@ function scene1() {
     const skipbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:750,y:250,width:150,height:150});
 Actions.Click(skipbutton, () => {
         titlescreenmusic.pause();
-        GaaTil(sceneFjellheksHome);
+        GaaTil(chCardFBearSleepChallenge);
     })    
 Actions.Click(startbutton, () => {
         scene3audio.play();
