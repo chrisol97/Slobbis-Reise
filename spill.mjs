@@ -27,7 +27,6 @@ const Start = (maal) => {
 - Legge inn animasjon Slobbi som snakker på alle sjansekort
 - Legge inn funksjon for at man kan trykke på låsen for å åpne porter
 - Få til Tween-funksjon
-- 
 
 */
 // QUICK SKIPBUTTON
@@ -196,7 +195,7 @@ function scene4() {
 
 function scene5() {
     scene4audio.pause();
-    const garderobespill = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:0,y:0,width:1080,height:810});
+    const garderobespill = new Blocks.Image("Bilder/Bakgrunner/garderobe.png", {x:0,y:0,width:1080,height:780});
     const blshoe2 = new Blocks.Image("Bilder/Oppgaver/blueshoe.png", {x:675,y:550,width:60,height:85});
     const blshoe3 = new Blocks.Image("Bilder/Oppgaver/blueshoe.png", {x:400,y:550,width:60,height:85});
     const gshoe2 = new Blocks.Image("Bilder/Oppgaver/greenshoe.png", {x:600,y:355,width:100,height:67});
