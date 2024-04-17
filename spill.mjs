@@ -22,7 +22,12 @@ const Start = (maal) => {
 }
 //#endregion
 
-/* JOBBE MED MANDAG ETTERMIDDAG/KVELD
+/* JOBBE MED VIDERE
+- Legge inn reaksjoner på alt som kan trykkes på; typ "Neeeii, ikke helt! Prøv en gang til!"
+- Legge inn animasjon Slobbi som snakker på alle sjansekort
+- Legge inn funksjon for at man kan trykke på låsen for å åpne porter
+- Få til Tween-funksjon
+- 
 
 */
 // QUICK SKIPBUTTON
@@ -146,7 +151,12 @@ function scene1() {
     const titlescreen = new Blocks.Image("Bilder/Bakgrunner/titlescreen2.jpg", {x:0,y:0,width:1080,height:810});
     const fjellheksa = new Blocks.Image("Bilder/Karakterer/fjellheksa.png", {x:150,y:416,width:300,height:400});
     const startbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:215,y:250,width:150,height:150});
-    Actions.Click(startbutton, () => {
+    const skipbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:750,y:250,width:150,height:150});
+Actions.Click(skipbutton, () => {
+        titlescreenmusic.pause();
+        GaaTil(chCardFBearSleepChallenge);
+    })    
+Actions.Click(startbutton, () => {
         scene3audio.play();
         GaaTil(scene3);
     })
@@ -241,12 +251,12 @@ function scene8 () {
     const closedgate2 = new Blocks.Image("Bilder/Bakgrunner/closedgatekeyless.png", {x:0,y:0,width:1080,height:810});
     const frameforkey = new Blocks.Image("Bilder/Oppgaver/frameforkey.png", {x:265,y:75,width:550,height:325});
     const brokenkeyback = new Blocks.Image("Bilder/Oppgaver/brokenkeyback.png", {x:850,y:550,width:200,height:200});
-    Actions.Drag(brokenkeyback);
     const brokenkeyfront = new Blocks.Image("Bilder/Oppgaver/brokenkeyfront.png", {x:25,y:50,width:200,height:200});
-    Actions.Drag(brokenkeyfront);
     const brokenkeymiddle = new Blocks.Image("Bilder/Oppgaver/brokenkeymiddle.png", {x:880,y:20,width:200,height:200});
-    Actions.Drag(brokenkeymiddle);
     const cbscene8 = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:45,y:550,width:150,height:150});
+    Actions.Drag(brokenkeyback);
+    Actions.Drag(brokenkeyfront);
+    Actions.Drag(brokenkeymiddle);
     Actions.Click(cbscene8, () => {
         GaaTil(scene9);
     })
@@ -1387,8 +1397,9 @@ function chCardFBearSleepChallenge () {
     chCardBearSleepSong.play();
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", {x:0,y:0,width:1080,height:810});
     const bearSleep = new Blocks.Image("Bilder/Karakterer/bearSleep.png", {x:750,y:600,width:200,height:150});
-    //const slobbieSneaky = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:-225,y:500,width:300,height:400});
-    const backbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:475,y:20,width:150,height:150});
+    //const slobbieSneaky = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", {x:-25,y:500,width:300,height:400});
+    const backbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:475,y:20,width:150,height:150});                // PRØV Å FIKS TWEEN
+    //Actions.Tween(slobbieSneaky, 1, 0); 
     Actions.Click(backbutton, () => {
         chCardBearSleepSong.pause();
         GaaTil(sceneForest4);
