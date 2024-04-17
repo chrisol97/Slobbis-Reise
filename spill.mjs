@@ -1001,7 +1001,7 @@ function sceneForest4 () {
         GaaTil(sceneMountain4);
     })
     Actions.Click(quickhopbuttonE, () => {
-    GaaTil(sceneOutsideMountainaudio);
+    GaaTil(sceneOutsideMountain);
     })
     Actions.Click(cbForest4, () => {
         GaaTil(scene13);
@@ -1704,13 +1704,15 @@ function sceneFjellheksHome () {
     const speechbubble1 = new Blocks.Image("Bilder/Snakkebobler/speechbubbleFjellheksHomeReverse.png", {x:300,y:160,width:200,height:200});
     const speechbubble2 = new Blocks.Image("Bilder/Snakkebobler/speechbubbleFjellheksHomeSlobbie.png", {x:550,y:300,width:400,height:300});
     const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:800,y:50,width:150,height:150});
-    Actions.Click(continuebutton, () => {
-        GaaTil(sceneEnd);
-    })
     sceneFjellheksHomeReverseaudio.play();
     sceneFjellheksHomeReverseaudio.onended = function () {
         sceneFjellheksHomeSlobbieaudio.play();
     }
+    Actions.Click(continuebutton, () => {
+        sceneFjellheksHomeReverseaudio.pause();
+        sceneFjellheksHomeSlobbieaudio.pause();
+        GaaTil(sceneEnd);
+    })
 }
 
 function sceneEnd () {
