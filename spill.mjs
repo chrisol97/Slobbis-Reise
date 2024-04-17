@@ -28,7 +28,7 @@ const Start = (maal) => {
 - Legge inn funksjon for at man kan trykke på låsen for å åpne porter
 - Få til Tween-funksjon
 - Legge inn ambient-noise på de forskjellige områdene??
-- 
+- Se på Collison-action
 
 */
 // QUICK SKIPBUTTON
@@ -1181,6 +1181,7 @@ function sceneForestChanceFront () {
     if (tall === 0) {
         chanceCardF1audio.play();
         const chance0 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF1.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbForestChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});               
         Actions.Click(cbForestChanceFront, () => {
             chanceCardF1audio.pause();
@@ -1189,6 +1190,7 @@ function sceneForestChanceFront () {
     } else if (tall === 1){
         chanceCardF2audio.play();
         const chance1 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF2.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const ForestChanceFront = new Blocks.Image("Bilder/Knapper/quickhopbuttonF.png", {x:675,y:25,width:150,height:150});
         const SwampChanceFront = new Blocks.Image("Bilder/Knapper/quickhopbuttonS.png", {x:475,y:25,width:150,height:150});
         const MountainChanceFront = new Blocks.Image("Bilder/Knapper/quickhopbuttonM.png", {x:275,y:25,width:150,height:150});              
@@ -1207,6 +1209,7 @@ function sceneForestChanceFront () {
     } else if (tall === 2) {
         chanceCardF3audio.play();
         const chance2 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF3.png",  {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbForestChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});               
         Actions.Click(cbForestChanceFront, () => {
             chanceCardF3audio.pause();
@@ -1215,6 +1218,7 @@ function sceneForestChanceFront () {
     } else if (tall === 3) {
         chanceCardF4audio.play();
         const chance3 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF4.png",{x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbForestChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});               
         Actions.Click(cbForestChanceFront, () => {
             chanceCardF4audio.pause();
@@ -1223,6 +1227,7 @@ function sceneForestChanceFront () {
     } else if (tall === 4) {
         chanceCardF5audio.play();
         const chance4 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF5.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbForestChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});               
         Actions.Click(cbForestChanceFront, () => {
             chanceCardF5audio.pause();
@@ -1231,6 +1236,7 @@ function sceneForestChanceFront () {
     } else if (tall === 5) {
         chanceCardF6audio.play();
         const chance5 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF6.png", {x:30,y:10,width:1020,height:700});
+        const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], {x:700,y:450,width:450,height:550, loop:true, auto:true});
         const cbForestChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:50,y:550,width:150,height:150});               
         Actions.Click(cbForestChanceFront, () => {
             chanceCardF6audio.pause();
@@ -1238,7 +1244,6 @@ function sceneForestChanceFront () {
         })
     }
 }
-    // HUSK Å LEGGE INN UTFALL
 
 
 // MOUNTAINMAP - CARDMAPS
@@ -1686,7 +1691,7 @@ function qCardSHowManyFrogsQuestion () {
 function sceneOutsideMountain () {
     sceneOutsideMountainaudio.play();
     const background = new Blocks.Image("Bilder/Bakgrunner/outsidemountain.png", {x:-20,y:0,width:1120,height:810});
-    const slobbie = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbieopenmoutharmdown.png"], {x:300,y:450,width:300,height:400, loop:true, auto:true});
+    const slobbie = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/KaraktFerer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbieopenmoutharmdown.png"], {x:300,y:450,width:300,height:400, loop:true, auto:true});
     const speechbubble = new Blocks.Image("Bilder/Snakkebobler/speechbubbleOutsideMountain.png", {x:330,y:320,width:400,height:300});
     const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:45,y:550,width:150,height:150});
     const ForestChanceFront = new Blocks.Image("Bilder/Knapper/quickhopbuttonF.png", {x:675,y:25,width:150,height:150});
