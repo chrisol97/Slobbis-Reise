@@ -7,7 +7,6 @@
     font-weight: 100;
     font-style: normal;
     font-variation-settings: "slnt" 0;
-    overflow: hidden;
 }
 
 .overskrift {
@@ -16,4 +15,9 @@
 
 .overskrift2 {
     color: greenyellow;
+}
+
+html{
+    overflow: hidden;
+
 }
