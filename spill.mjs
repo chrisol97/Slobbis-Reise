@@ -1391,7 +1391,7 @@ function qCardMSteepHillQuestion () {
 function qCardMWhoDoesntBelongQuestion () {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", {x:0,y:0,width:1080,height:810});
     const correctcard = new Blocks.Image("Bilder/Oppgaver/huldrasadCard.png", {x:600,y:100,width:400,height:300});
-    const wrongcard1 = new Blocks.Image("Bilder/Oppgaver/shadowbearCard.png", {x:50,y:150,width:400,height:300});
+    const wrongcard1 = new Blocks.Image("Bilder/Oppgaver/shadowbearcard.png", {x:50,y:150,width:400,height:300});
     const wrongcard2 = new Blocks.Image("Bilder/Oppgaver/tinyelfcard.png", {x:450,y:450,width:400,height:300});
     Actions.Click(correctcard, () => {
         GaaTil(sceneMountain4);
