@@ -31,7 +31,7 @@ const Tween = (item, dx, dy) => {
     }
     tweenItem.reverse = () => {
         tweenItem.dx *= -1;
-        tweenItem.dy *= 1;
+        tweenItem.dy *= -1;
     }
     tweenItems.push(tweenItem);
     return tweenItem;

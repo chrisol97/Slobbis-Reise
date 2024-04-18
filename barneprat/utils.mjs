@@ -5,14 +5,18 @@ const Bound = (item, bounds, callback) => {
     const orgUpdate = item.update;
 
     addListener(item);
+    let boundsViolation = false;
 
     item.update = () => {
 
         orgUpdate.call(item)
 
+        if(boundsViolation){
+            return;
+        }
+
         let x = item.x;
         let y = item.y;
-        let boundsViolation = false;
 
         if (bounds.left > x) {
             item.x = bounds.left
@@ -26,11 +30,13 @@ const Bound = (item, bounds, callback) => {
             item.y = bounds.top;
             boundsViolation = true
         } else if (bounds.bottom < y) {
-            item.y = bounds.bottom
+            //item.y = bounds.bottom
+            boundsViolation = true
         }
 
         if (boundsViolation) {
             callback(item);
+            boundsViolation = false;
         }
 
     }
