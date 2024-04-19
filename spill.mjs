@@ -22,118 +22,141 @@ const Start = (maal) => {
 }
 //#endregion
 
-/* TODO JOBBE MED VIDERE
-- Legge inn reaksjoner på alt som kan trykkes på; typ "Neeeii, ikke helt! Prøv en gang til!" eller "Ja, kjempebra!" - Gjør hjemme 
-- Få til Tween-funksjon
-- Legge inn ambient-noise på de forskjellige områdene?? - Gjør hjemme
-
-*/
-// QUICK SKIPBUTTON
-/*const skipbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", {x:750,y:250,width:150,height:150});
-Actions.Click(skipbutton, () => {
-        GaaTil();
-})*/
-
-
 // MUSIKK
-let titlescreenmusic = new Audio("Lydfiler/Music/titlescreen.mp3");
-let chCardBearSleepSong = new Audio("Lydfiler/Music/chCardBearSleepSong.mp3");
-let chCardSHuldraDanceSong = new Audio("Lydfiler/Music/chCardSHuldraDanceSong.mp3");
+    let titlescreenmusic = new Audio("Lydfiler/Music/titlescreen.mp3");
+    let chCardBearSleepSong = new Audio("Lydfiler/Music/chCardBearSleepSong.mp3");
+    let chCardSHuldraDanceSong = new Audio("Lydfiler/Music/chCardSHuldraDanceSong.mp3");
 
 
 // SNAKKEBOBLER
-let scene3audio = new Audio("Lydfiler/SpeechBubbles/scene3SpeechBubble.mp3", { loop: true, auto: false });
-let scene4audio = new Audio("Lydfiler/SpeechBubbles/scene4SpeechBubble.mp3");
-let scene6audio = new Audio("Lydfiler/SpeechBubbles/scene6SpeechBubble.mp3");
-let scene7audio = new Audio("Lydfiler/SpeechBubbles/scene7SpeechBubble.mp3");
-let scene9audio = new Audio("Lydfiler/SpeechBubbles/scene9SpeechBubble.mp3");
-let scene10audio = new Audio("Lydfiler/SpeechBubbles/scene10SpeechBubble.mp3");
-let scene12audio = new Audio("Lydfiler/SpeechBubbles/scene12SpeechBubble.mp3");
-let sceneMountain1audio = new Audio("Lydfiler/SpeechBubbles/sceneMountain1SpeechBubble.mp3");
-let sceneSwamp1audio = new Audio("Lydfiler/SpeechBubbles/sceneSwamp1SpeechBubble.mp3");
-let sceneForest1audio = new Audio("Lydfiler/SpeechBubbles/sceneForest1SpeechBubble.mp3");
-let sceneCard1audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules1.mp3");
-let sceneCard2audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules2.mp3");
-let qCardFCamoTrollQuestion2audio = new Audio("Lydfiler/SpeechBubbles/sceneqCardFCamoTrollQuestion2.mp3");
-let sceneOutsideMountainaudio = new Audio("Lydfiler/SpeechBubbles/sceneOutsideMountainSpeechBubble.mp3");
-let sceneInsideMountainaudio = new Audio("Lydfiler/SpeechBubbles/sceneInsideMountainSpeechBubble.mp3");
-let sceneFjellheksHomeSlobbieaudio = new Audio("Lydfiler/SpeechBubbles/sceneFjellheksHomeSlobbieSpeechBubble.mp3");
-let sceneFjellheksHomeReverseaudio = new Audio("Lydfiler/SpeechBubbles/sceneFjellheksHomeReverseSpeechBubble.mp3");
-let sceneEndaudio = new Audio("Lydfiler/SpeechBubbles/sceneEnd.mp3");
+    let scene3audio = new Audio("Lydfiler/SpeechBubbles/scene3SpeechBubble.mp3");
+    let scene4audio = new Audio("Lydfiler/SpeechBubbles/scene4SpeechBubble.mp3");
+    let scene6audio = new Audio("Lydfiler/SpeechBubbles/scene6SpeechBubble.mp3");
+    let scene7audio = new Audio("Lydfiler/SpeechBubbles/scene7SpeechBubble.mp3");
+    let scene9audio = new Audio("Lydfiler/SpeechBubbles/scene9SpeechBubble.mp3");
+    let scene10audio = new Audio("Lydfiler/SpeechBubbles/scene10SpeechBubble.mp3");
+    let scene12audio = new Audio("Lydfiler/SpeechBubbles/scene12SpeechBubble.mp3");
+    let sceneMountain1audio = new Audio("Lydfiler/SpeechBubbles/sceneMountain1SpeechBubble.mp3");
+    let sceneSwamp1audio = new Audio("Lydfiler/SpeechBubbles/sceneSwamp1SpeechBubble.mp3");
+    let sceneForest1audio = new Audio("Lydfiler/SpeechBubbles/sceneForest1SpeechBubble.mp3");
+    let sceneCard1audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules1.mp3");
+    let sceneCard2audio = new Audio("Lydfiler/SpeechBubbles/sceneXSpeechBubbleCardRules2.mp3");
+    let qCardFCamoTrollQuestion2audio = new Audio("Lydfiler/SpeechBubbles/sceneqCardFCamoTrollQuestion2.mp3");
+    let sceneOutsideMountainaudio = new Audio("Lydfiler/SpeechBubbles/sceneOutsideMountainSpeechBubble.mp3");
+    let sceneInsideMountainaudio = new Audio("Lydfiler/SpeechBubbles/sceneInsideMountainSpeechBubble.mp3");
+    let sceneFjellheksHomeSlobbieaudio = new Audio("Lydfiler/SpeechBubbles/sceneFjellheksHomeSlobbieSpeechBubble.mp3");
+    let sceneFjellheksHomeReverseaudio = new Audio("Lydfiler/SpeechBubbles/sceneFjellheksHomeReverseSpeechBubble.mp3");
+    let sceneEndaudio = new Audio("Lydfiler/SpeechBubbles/sceneEnd.mp3");
+
 // LYDER TIL KORT
 
 //FOREST
-//CHALLENGES
-let chCardFBearSleepTextaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFBearSleepText.mp3");
-let chCardFBiggestTrollaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFBiggestTrollText.mp3");
-let chCardFBukkeneBruseaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFBukkeneBruseText.mp3");
-let chCardFRRHFruitBasketaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFRRHFruitBasketText.mp3");
-let chCardFSinnataggFacesaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFSinnataggFacesText.mp3");
-let sinnataggLaughaudio = new Audio("Lydfiler/sinnataggLaugh.mp3");
-let chCardFTrollChildrenBedaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFTrollChildrenBedText.mp3");
+    //CHALLENGES
+    let chCardFBearSleepTextaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFBearSleepText.mp3");
+    let chCardFBiggestTrollaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFBiggestTrollText.mp3");
+    let chCardFBukkeneBruseaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFBukkeneBruseText.mp3");
+    let chCardFRRHFruitBasketaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFRRHFruitBasketText.mp3");
+    let chCardFSinnataggFacesaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFSinnataggFacesText.mp3");
+    let sinnataggLaughaudio = new Audio("Lydfiler/sinnataggLaugh.mp3");
+    let chCardFTrollChildrenBedaudio = new Audio("Lydfiler/Cards/Forest/Challenge/chCardFTrollChildrenBedText.mp3");
 
-//QUESTIONS
-let qCardFCamoTrollTextaudio = new Audio("Lydfiler/Cards/Forest/Question/qCardFCamoTrollText.mp3");
-let qCardFMikkelRevLetteraudio = new Audio("Lydfiler/Cards/Forest/Question/qCardFMikkelRevLetterText.mp3");
-let qCardFTrollStealPrincessaudio = new Audio("Lydfiler/Cards/Forest/Question/qCardFTrollStealPrincessText.mp3");
-let qCardFWitchWartsaudio = new Audio("Lydfiler/Cards/Forest/Question/qCardFWitchWartsText.mp3");
+    //QUESTIONS
+    let qCardFCamoTrollTextaudio = new Audio("Lydfiler/Cards/Forest/Question/qCardFCamoTrollText.mp3");
+    let qCardFMikkelRevLetteraudio = new Audio("Lydfiler/Cards/Forest/Question/qCardFMikkelRevLetterText.mp3");
+    let qCardFTrollStealPrincessaudio = new Audio("Lydfiler/Cards/Forest/Question/qCardFTrollStealPrincessText.mp3");
+    let qCardFWitchWartsaudio = new Audio("Lydfiler/Cards/Forest/Question/qCardFWitchWartsText.mp3");
 
-//CHANCES
-let chanceCardF1audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF1Text.mp3");
-let chanceCardF2audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF2Text.mp3");
-let chanceCardF3audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF3Text.mp3");
-let chanceCardF4audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF4Text.mp3");
-let chanceCardF5audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF5Text.mp3");
-let chanceCardF6audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF6Text.mp3");
+    //CHANCES
+    let chanceCardF1audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF1Text.mp3");
+    let chanceCardF2audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF2Text.mp3");
+    let chanceCardF3audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF3Text.mp3");
+    let chanceCardF4audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF4Text.mp3");
+    let chanceCardF5audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF5Text.mp3");
+    let chanceCardF6audio = new Audio("Lydfiler/Cards/Forest/Chance/chanceCardF6Text.mp3");
 
 //SWAMP
-//CHALLENGES
-let chCardSEarwaxCandleaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSEarwaxCandleText.mp3");
-let chCardSHuldraDanceaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSHuldraDanceText.mp3");
-let chCardSJumpHighaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSJumpHighText.mp3");
-let chCardSJungelRapaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSJungelRapText.mp3");
-let chCardSNokkenBlowaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSNokkenBlowText.mp3");
-let chCardSSlobbieSnakeTreeaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSSlobbieSnakeTreeText.mp3");
+    //CHALLENGES
+    let chCardSEarwaxCandleaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSEarwaxCandleText.mp3");
+    let chCardSHuldraDanceaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSHuldraDanceText.mp3");
+    let chCardSJumpHighaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSJumpHighText.mp3");
+    let chCardSJungelRapaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSJungelRapText.mp3");
+    let chCardSNokkenBlowaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSNokkenBlowText.mp3");
+    let chCardSSlobbieSnakeTreeaudio = new Audio("Lydfiler/Cards/Swamp/Challenge/chCardSSlobbieSnakeTreeText.mp3");
 
-//QUESTIONS
-let qCardSCountCrocoaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSCountCrocoText.mp3");
-let qCardSFossegrimenLureaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSFossegrimenLureText.mp3");
-let qCardSFrogEatSlobbieaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSFrogEatSlobbieText.mp3");
-let qCardSFrogRiddleaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSFrogRiddleText.mp3");
-let qCardSHippoBubbaaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSHippoBubbaText.mp3");
-let qCardSHowManyFrogsaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSHowManyFrogsText.mp3");
+    //QUESTIONS
+    let qCardSCountCrocoaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSCountCrocoText.mp3");
+    let qCardSFossegrimenLureaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSFossegrimenLureText.mp3");
+    let qCardSFrogEatSlobbieaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSFrogEatSlobbieText.mp3");
+    let qCardSFrogRiddleaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSFrogRiddleText.mp3");
+    let qCardSHippoBubbaaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSHippoBubbaText.mp3");
+    let qCardSHowManyFrogsaudio = new Audio("Lydfiler/Cards/Swamp/Question/qCardSHowManyFrogsText.mp3");
 
-//CHANCES
-let chanceCardS1audio = new Audio("Lydfiler/Cards/Swamp/Chance/chanceCardS1Text.mp3");
-let chanceCardS2audio = new Audio("Lydfiler/Cards/Swamp/Chance/chanceCardS2Text.mp3");
-let chanceCardS3audio = new Audio("Lydfiler/Cards/Swamp/Chance/chanceCardS3Text.mp3");
-let chanceCardXaudio = new Audio("Lydfiler/Cards/Swamp/Chance/chancecardXText.mp3");
+    //CHANCES
+    let chanceCardS1audio = new Audio("Lydfiler/Cards/Swamp/Chance/chanceCardS1Text.mp3");
+    let chanceCardS2audio = new Audio("Lydfiler/Cards/Swamp/Chance/chanceCardS2Text.mp3");
+    let chanceCardS3audio = new Audio("Lydfiler/Cards/Swamp/Chance/chanceCardS3Text.mp3");
+    let chanceCardXaudio = new Audio("Lydfiler/Cards/Swamp/Chance/chancecardXText.mp3");
 
 //MOUNTAIN
-//CHALLENGES
-let chCardMBuildBricksaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMBuildBricksText.mp3");
-let chCardMBuildBridgeaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMBuildBridgeText.mp3");
-let chCardMCampfireaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMCampfireText.mp3");
-let chCardMElfShieldaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMElfShieldText.mp3");
-let chCardMHighestMountainaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMHighestMountainText.mp3");
-let chCardMLonelyTrollaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMLonelyTrollText.mp3");
-let chCardMMountainElfSingaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMMountainElfSingText.mp3");
-//QUESTIONS
-let qCardMAskeladdenCastleaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMAskeladdenCastleText.mp3");
-let qCardMFogCatHideaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMFogCatHideText.mp3");
-let qCardMFogCatPrintsaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMFogCatPrintsText.mp3");
-let qCardMSlobbieHideaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMSlobbieHideText.mp3");
-let qCardMSteepHillaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMSteepHillText.mp3");
-let qCardMWhoDoesntBelongaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMWhoDoesntBelongText.mp3");
+    //CHALLENGES
+    let chCardMBuildBricksaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMBuildBricksText.mp3");
+    let chCardMBuildBridgeaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMBuildBridgeText.mp3");
+    let chCardMCampfireaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMCampfireText.mp3");
+    let chCardMElfShieldaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMElfShieldText.mp3");
+    let chCardMHighestMountainaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMHighestMountainText.mp3");
+    let chCardMLonelyTrollaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMLonelyTrollText.mp3");
+    let chCardMMountainElfSingaudio = new Audio("Lydfiler/Cards/Mountain/Challenge/chCardMMountainElfSingText.mp3");
 
-//CHANCES
-let chanceCardM1audio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM1Text.mp3");
-let chanceCardM2audio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM2Text.mp3");
-let chanceCardM3audio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM3Text.mp3");
-let chanceCardM4audio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM4Text.mp3");
-let chanceCardM5audio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM5Text.mp3");
-let chanceCardMTrollScareaudio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardMTrollScareText.mp3");
-let chanceCardYaudio = new Audio("Lydfiler/Cards/Mountain/Chance/chancecardY.mp3");
+    //QUESTIONS
+    let qCardMAskeladdenCastleaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMAskeladdenCastleText.mp3");
+    let qCardMFogCatHideaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMFogCatHideText.mp3");
+    let qCardMFogCatPrintsaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMFogCatPrintsText.mp3");
+    let qCardMSlobbieHideaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMSlobbieHideText.mp3");
+    let qCardMSteepHillaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMSteepHillText.mp3");
+    let qCardMWhoDoesntBelongaudio = new Audio("Lydfiler/Cards/Mountain/Question/qCardMWhoDoesntBelongText.mp3");
+
+    //CHANCES
+    let chanceCardM1audio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM1Text.mp3");
+    let chanceCardM2audio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM2Text.mp3");
+    let chanceCardM3audio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM3Text.mp3");
+        let chanceCardM3Fishaudio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM3Boing.mp3");
+    let chanceCardM4audio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM4Text.mp3");
+    let chanceCardM5audio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardM5Text.mp3");
+    let chanceCardMTrollScareaudio = new Audio("Lydfiler/Cards/Mountain/Chance/chanceCardMTrollScareText.mp3");
+    let chanceCardYaudio = new Audio("Lydfiler/Cards/Mountain/Chance/chancecardY.mp3");
+
+// LYDER TIL KORT - SVAR & REAKSJONER
+    
+//FOREST
+    let reactionNMikkelRevMomaudio = new Audio("Lydfiler/Cards/Reactions/Forest/reactionNMikkelRevMom.mp3");
+    let reactionNMikkelRevToiletaudio = new Audio("Lydfiler/Cards/Reactions/Forest/reactionNMikkelRevToilet.mp3");
+    let reactionPMikkelRevAfricaaudio = new Audio("Lydfiler/Cards/Reactions/Forest/reactionPMikkelRevAfrica.mp3");
+    let reactionNTrollStealPrincessTrashaudio = new Audio("Lydfiler/Cards/Reactions/Forest/reactionNTrollStealPrincessTrash.mp3");
+    let reactionNTrollStealPrincessYellaudio = new Audio("Lydfiler/Cards/Reactions/Forest/reactionNTrollStealPrincessYell.mp3");
+    let reactionPTrollStealPrincessTrapaudio = new Audio("Lydfiler/Cards/Reactions/Forest/reactionPTrollStealPrincessTrap.mp3");
+
+//SWAMP
+    let reactionNFossegrimenLureGoWithaudio = new Audio("Lydfiler/Cards/Reactions/Swamp/reactionNFossegrimenLureGoWith.mp3");
+    let reactionNFossegrimenLureTradeaudio = new Audio("Lydfiler/Cards/Reactions/Swamp/reactionNFossegrimenLureTrade.mp3");
+    let reactionPFossegrimenLureCutStringsaudio = new Audio("Lydfiler/Cards/Reactions/Swamp/reactionPFossegrimenLureCutStrings.mp3");
+
+//MOUNTAIN
+    let reactionNSteepHillScaryaudio = new Audio("Lydfiler/Cards/Reactions/Mountain/reactionNSteepHillScary.mp3");
+    let reactionNSteepHillSlipperyaudio = new Audio("Lydfiler/Cards/Reactions/Mountain/reactionNSteepHillSlippery.mp3");
+    let reactionPSteepHillSafeaudio = new Audio("Lydfiler/Cards/Reactions/Mountain/reactionPSteepHillSafe.mp3");
+    let reactionNWhoDoesntBelongSnowElfaudio = new Audio("Lydfiler/Cards/Reactions/Mountain/reactionNWhoDoesntBelongSnowElf.mp3");
+    let reactionNWhoDoesntBelongShadowbearaudio = new Audio("Lydfiler/Cards/Reactions/Mountain/reactionNWhoDoesntBelongShadowbear.mp3");
+    let reactionPWhoDoesntBelongHuldraaudio = new Audio("Lydfiler/Cards/Reactions/Mountain/reactionPWhoDoesntBelongHuldra.mp3");
+
+//GENERELLE
+    let reactionPGoodWorkaudio = new Audio("Lydfiler/Cards/Reactions/General/reactionPGoodWork.mp3");
+    let reactionPThatMightWorkaudio = new Audio("Lydfiler/Cards/Reactions/General/reactionPThatMightWork.mp3");
+    let reactionNCloseOneaudio = new Audio("Lydfiler/Cards/Reactions/General/reactionNCloseOne.mp3");
+    let reactionNTryAgainaudio = new Audio("Lydfiler/Cards/Reactions/General/reactionNTryAgain.mp3");
+    let reactionPYouDidItaudio = new Audio("Lydfiler/Cards/Reactions/General/reactionPYouDidIt.mp3");
+    let Applauseaudio = new Audio("Lydfiler/Cards/Reactions/General/Applause.mp3");
+
+
 
 Start(scene0);
 
@@ -149,11 +172,6 @@ function scene1() {
     const titlescreen = new Blocks.Image("Bilder/Bakgrunner/titlescreen2.jpg", { x: -8, y: -8, width: 1088, height: 818 });
     const fjellheksa = new Blocks.Image("Bilder/Karakterer/fjellheksa.png", { x: 150, y: 416, width: 300, height: 400 });
     const startbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 215, y: 250, width: 150, height: 150 });
-    const skipbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 750, y: 250, width: 150, height: 150 });
-    Actions.Click(skipbutton, () => {
-        titlescreenmusic.pause();
-        GaaTil(sceneMountainChanceFront);
-    })
     Actions.Click(startbutton, () => {
         scene3audio.play();
         GaaTil(scene3);
@@ -256,11 +274,6 @@ function scene8() {
     Actions.Drag(brokenkeyback);
     Actions.Drag(brokenkeyfront);
     Actions.Drag(brokenkeymiddle);
-    /*TODO if (Actions.Colide(brokenkeyback, brokenkeymiddle) && Actions.Colide(brokenkeymiddle, brokenkeyfront)) {
-        brokenkeyback.hide();
-        brokenkeyfront.hide();
-        brokenkeymiddle.hide();                 // SE PÅ DETTE - ØNSKER AT DET SKAL BLI TIL EN SAMMENSATT NØKKEL NÅR DELENE TOUCHER
-    }*/
     Actions.Click(lock, () => {
         GaaTil(scene9);
     })
@@ -422,7 +435,7 @@ function sceneMountainChallengeFront() {
         chCardMBuildBricksaudio.play();
         const challenge0 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMBuildBricks.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                     // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                    
         Actions.Click(startbuttonCard, () => {
             chCardMBuildBricksaudio.pause();
             GaaTil(chCardMBuildBricksChallenge);
@@ -435,7 +448,7 @@ function sceneMountainChallengeFront() {
         chCardMBuildBridgeaudio.play();
         const challenge1 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMBuildBridge.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                     // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                      
         Actions.Click(startbuttonCard, () => {
             chCardMBuildBridgeaudio.pause();
             GaaTil(chCardMBuildBridgeChallenge);
@@ -447,16 +460,19 @@ function sceneMountainChallengeFront() {
     } else if (tall === 2) {
         chCardMElfShieldaudio.play();
         const challenge3 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMElfShield.png", { x: 30, y: 10, width: 1020, height: 700 });
-        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });              // FERDIG
+        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });              
         Actions.Click(cbMountainChallengeFront, () => {
             chCardMElfShieldaudio.pause();
-            GaaTil(sceneMountain4);
+            Applauseaudio.play();
+            Applauseaudio.onended = () => {
+                GaaTil(sceneMountain4);
+            }
         })
     } else if (tall === 3) {
         chCardMHighestMountainaudio.play();
         const challenge4 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMHighestMountain.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 
         Actions.Click(startbuttonCard, () => {
             chCardMHighestMountainaudio.pause();
             GaaTil(chCardMHighestMountainChallenge);
@@ -468,24 +484,31 @@ function sceneMountainChallengeFront() {
     } else if (tall === 4) {
         chCardMLonelyTrollaudio.play();
         const challenge5 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMLonelyTroll.png", { x: 30, y: 10, width: 1020, height: 700 });
-        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });           // FERDIG
+        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });           
         Actions.Click(cbMountainChallengeFront, () => {
             chCardMLonelyTrollaudio.pause();
-            GaaTil(sceneMountain4);
+            sinnataggLaughaudio.play();
+            sinnataggLaughaudio.onended = () => {
+                GaaTil(sceneMountain4);
+            }
         })
+
     } else if (tall === 5) {
         chCardMMountainElfSingaudio.play();
         const challenge6 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMMountainElfSing.png", { x: 30, y: 10, width: 1020, height: 700 });
-        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });          // FERDIG
+        const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });          
         Actions.Click(cbMountainChallengeFront, () => {
             chCardMMountainElfSingaudio.pause();
-            GaaTil(sceneMountain4);
+            Applauseaudio.play();
+            Applauseaudio.onended = () => {
+                GaaTil(sceneMountain4);
+            };
         })
     } else if (tall === 6) {
         chCardMCampfireaudio.play();
         const challenge7 = new Blocks.Image("Bilder/KortKlare/Mountain/Challenge/chCardMCampfire.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbMountainChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG - 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                  
         Actions.Click(startbuttonCard, () => {
             chCardMCampfireaudio.pause();
             GaaTil(chCardMCampfireChallenge1);
@@ -505,7 +528,7 @@ function sceneMountainQuestionFront() {
         qCardMAskeladdenCastleaudio.play();
         const question0 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMAskeladdenCastle.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 
         Actions.Click(startbuttonCard, () => {
             qCardMAskeladdenCastleaudio.pause();
             GaaTil(qCardMAskeladdenCastleQuestion);
@@ -518,7 +541,7 @@ function sceneMountainQuestionFront() {
         qCardMFogCatHideaudio.play();
         const question1 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMFogCatHide.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                  
         Actions.Click(startbuttonCard, () => {
             qCardMFogCatHideaudio.pause();
             GaaTil(qCardMFogCatHideQuestion);
@@ -531,7 +554,7 @@ function sceneMountainQuestionFront() {
         qCardMFogCatPrintsaudio.play();
         const question2 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMFogCatPrints.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                  
         Actions.Click(startbuttonCard, () => {
             qCardMFogCatPrintsaudio.pause();
             GaaTil(qCardMFogCatPrintsQuestion);
@@ -544,7 +567,7 @@ function sceneMountainQuestionFront() {
         qCardMSlobbieHideaudio.play();
         const question3 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMSlobbieHide.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 
         Actions.Click(startbuttonCard, () => {
             qCardMSlobbieHideaudio.pause();
             GaaTil(qCardMSlobbieHideQuestion);
@@ -557,7 +580,7 @@ function sceneMountainQuestionFront() {
         qCardMSteepHillaudio.play();
         const question4 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMSteepHill.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 
         Actions.Click(startbuttonCard, () => {
             qCardMSteepHillaudio.pause();
             GaaTil(qCardMSteepHillQuestion)
@@ -570,7 +593,7 @@ function sceneMountainQuestionFront() {
         qCardMWhoDoesntBelongaudio.play();
         const question5 = new Blocks.Image("Bilder/KortKlare/Mountain/Question/qCardMWhoDoesntBelong.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbMountainQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                
         Actions.Click(startbuttonCard, () => {
             qCardMWhoDoesntBelongaudio.pause();
             GaaTil(qCardMWhoDoesntBelongQuestion);
@@ -582,18 +605,16 @@ function sceneMountainQuestionFront() {
     }
 }
 
-//HUSK Å LEGGE TIL OPPGAVER DER DET TRENGS
 
 //CHANCE
 function sceneMountainChanceFront() {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", { x: -8, y: -8, width: 1088, height: 818 });
     let tall = Math.floor(Math.random() * 7);
-    tall = 2;
     if (tall === 0) {
         chanceCardM1audio.play();
         const chance0 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM1.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });         // FERDIG 
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });        
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardM1audio.pause();
             GaaTil(sceneMountain4);
@@ -602,7 +623,7 @@ function sceneMountainChanceFront() {
         chanceCardM2audio.play();
         const chance1 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM2.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });         // FERDIG 
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });        
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardM2audio.pause();
             GaaTil(sceneMountain4);
@@ -612,7 +633,7 @@ function sceneMountainChanceFront() {
         const chance2 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM3.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
         const fish = new Blocks.Image("Bilder/Karakterer/fish.png", { x: 760, y: -200, width: 300, height: 150 });
-        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });         //TODO - SE PÅ COLLISION MED FISK OG SLÅBBIE
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });         
         const fishTween = Actions.Tween(fish, 0, 9);
         let bounceCounter = 3;
         let isbouncing = false;
@@ -644,7 +665,7 @@ function sceneMountainChanceFront() {
         };
         Utils.Bound(fish, Utils.Bounds(0, -500, 10000, 480), () => {
             bounce();
-            // start lyd her..
+             chanceCardM3Fishaudio.play();                                
         });
 
 
@@ -656,7 +677,7 @@ function sceneMountainChanceFront() {
         chanceCardM4audio.play();
         const chance3 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM4.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });         // FERDIG 
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });        
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardM4audio.pause();
             GaaTil(sceneMountain4);
@@ -665,7 +686,7 @@ function sceneMountainChanceFront() {
         chanceCardM5audio.play();
         const chance4 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardM5.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });         // FERDIG 
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });        
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardM5audio.pause();
             GaaTil(sceneMountain4);
@@ -675,7 +696,7 @@ function sceneMountainChanceFront() {
         const chance5 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chanceCardMTrollScare.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
         const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });             // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });            
         Actions.Click(startbuttonCard, () => {
             chanceCardMTrollScareaudio.pause();
             GaaTil(chanceCardMTrollScareMap);
@@ -688,7 +709,7 @@ function sceneMountainChanceFront() {
         chanceCardYaudio.play();
         const chance7 = new Blocks.Image("Bilder/KortKlare/Mountain/Chance/chancecardY.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });         // FERDIG 
+        const cbMountainChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });        
         Actions.Click(cbMountainChanceFront, () => {
             chanceCardYaudio.pause();
             GaaTil(sceneMountain4);
@@ -783,7 +804,7 @@ function sceneSwampChallengeFront() {
         chCardSEarwaxCandleaudio.play();
         const challenge0 = new Blocks.Image("Bilder/KortKlare/Swamp/Challenge/chCardSEarwaxCandle.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                
         Actions.Click(startbuttonCard, () => {
             chCardSEarwaxCandleaudio.pause();
             GaaTil(chCardSEarwaxCandleChallenge);
@@ -796,7 +817,7 @@ function sceneSwampChallengeFront() {
         chCardSHuldraDanceaudio.play();
         const challenge1 = new Blocks.Image("Bilder/KortKlare/Swamp/Challenge/chCardSHuldraDance.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG - LEGG TIL FUNKSJON FOR AT DEN GÅR VIDERE NÅR MUSIKKEN ER FERDIG
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                
         Actions.Click(startbuttonCard, () => {
             chCardSHuldraDanceaudio.pause();
             GaaTil(chCardSHuldraDanceChallenge);
@@ -808,32 +829,41 @@ function sceneSwampChallengeFront() {
     } else if (tall === 2) {
         chCardSJumpHighaudio.play();
         const challenge2 = new Blocks.Image("Bilder/KortKlare/Swamp/Challenge/chCardSJumpHigh.png", { x: 30, y: 10, width: 1020, height: 700 });
-        const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });             // FERDIG
+        const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });           
         Actions.Click(cbSwampChallengeFront, () => {
             chCardSJumpHighaudio.pause();
-            GaaTil(sceneSwamp4);
+            reactionPYouDidItaudio.play();
+            reactionPYouDidItaudio.onended = () => {
+                GaaTil(sceneSwamp4);
+            };
         })
     } else if (tall === 3) {
         chCardSJungelRapaudio.play();
         const challenge3 = new Blocks.Image("Bilder/KortKlare/Swamp/Challenge/chCardSJungelRap.png", { x: 30, y: 10, width: 1020, height: 700 });
-        const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });             // FERDIG 
+        const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });            
         Actions.Click(cbSwampChallengeFront, () => {
             chCardSJungelRapaudio.pause();
-            GaaTil(sceneSwamp4);
+            Applauseaudio.play();
+            Applauseaudio.onended = () => {
+                GaaTil(sceneSwamp4);
+            };
         })
     } else if (tall === 4) {
         chCardSNokkenBlowaudio.play();
         const challenge4 = new Blocks.Image("Bilder/KortKlare/Swamp/Challenge/chCardSNokkenBlow.png", { x: 30, y: 10, width: 1020, height: 700 });
-        const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });             // FERDIG 
+        const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });            
         Actions.Click(cbSwampChallengeFront, () => {
             chCardSNokkenBlowaudio.pause();
-            GaaTil(sceneSwamp4);
+            reactionPYouDidItaudio.play();
+            reactionPYouDidItaudio.onended = () => {
+                GaaTil(sceneSwamp4);
+            };
         })
     } else if (tall === 5) {
         chCardSSlobbieSnakeTreeaudio.play();
         const challenge5 = new Blocks.Image("Bilder/KortKlare/Swamp/Challenge/chCardSSlobbieSnakeTree.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });             // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });            
         Actions.Click(startbuttonCard, () => {
             chCardSSlobbieSnakeTreeaudio.pause();
             GaaTil(chCardSSlobbieSnakeTree);
@@ -845,7 +875,6 @@ function sceneSwampChallengeFront() {
     }
 }
 
-// HUSK Å LEGGE INN INNHOLD I OPPGAVENE
 
 // QUESTIONS
 
@@ -856,7 +885,7 @@ function sceneSwampQuestionFront() {
         qCardSCountCrocoaudio.play();
         const question0 = new Blocks.Image("Bilder/KortKlare/Swamp/Question/qCardSCountCroco.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 //FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                  
         Actions.Click(startbuttonCard, () => {
             qCardSCountCrocoaudio.pause();
             GaaTil(qCardSCountCrocoQuestion);
@@ -869,7 +898,7 @@ function sceneSwampQuestionFront() {
         qCardSFossegrimenLureaudio.play();
         const question1 = new Blocks.Image("Bilder/KortKlare/Swamp/Question/qCardSFossegrimenLure.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 //FERDIG
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 
         Actions.Click(startbuttonCard, () => {
             qCardSFossegrimenLureaudio.pause();
             GaaTil(qCardSFossegrimenLureQuestion);
@@ -882,7 +911,7 @@ function sceneSwampQuestionFront() {
         qCardSFrogEatSlobbieaudio.play();
         const question2 = new Blocks.Image("Bilder/KortKlare/Swamp/Question/qCardSFrogEatSlobbie.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 //FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 
         Actions.Click(startbuttonCard, () => {
             qCardSFrogEatSlobbieaudio.pause();
             GaaTil(qCardSFrogEatSlobbieQuestion);
@@ -895,7 +924,7 @@ function sceneSwampQuestionFront() {
         qCardSFrogRiddleaudio.play();
         const question3 = new Blocks.Image("Bilder/KortKlare/Swamp/Question/qCardSFrogRiddle.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG - 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                - 
         Actions.Click(startbuttonCard, () => {
             qCardSFrogRiddleaudio.pause();
             GaaTil(qCardSFrogRiddleQuestion);
@@ -908,7 +937,7 @@ function sceneSwampQuestionFront() {
         qCardSHippoBubbaaudio.play();
         const question4 = new Blocks.Image("Bilder/KortKlare/Swamp/Question/qCardSHippoBubba.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                
         Actions.Click(startbuttonCard, () => {
             qCardSHippoBubbaaudio.pause();
             GaaTil(qCardSHippoBubbaQuestion)
@@ -921,7 +950,7 @@ function sceneSwampQuestionFront() {
         qCardSHowManyFrogsaudio.play();
         const question5 = new Blocks.Image("Bilder/KortKlare/Swamp/Question/qCardSHowManyFrogs.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbSwampChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                 // FERDIG 
+        const startbuttonCard = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 10, width: 150, height: 150 });                
         Actions.Click(startbuttonCard, () => {
             qCardSHowManyFrogsaudio.pause();
             GaaTil(qCardSHowManyFrogsQuestion);
@@ -934,7 +963,6 @@ function sceneSwampQuestionFront() {
 
 }
 
-// HUSK Å LEGGGE INN INNHOLD I SPØRSMÅLENE
 
 //CHANCES
 
@@ -945,7 +973,7 @@ function sceneSwampChanceFront() {
         chanceCardS1audio.play();
         const chance0 = new Blocks.Image("Bilder/KortKlare/Swamp/Chance/chanceCardS1.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });                // FERDIG 
+        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });               
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardS1audio.pause();
             GaaTil(sceneSwamp4);
@@ -954,7 +982,7 @@ function sceneSwampChanceFront() {
         chanceCardS2audio.play();
         const chance1 = new Blocks.Image("Bilder/KortKlare/Swamp/Chance/chanceCardS2.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });                // FERDIG 
+        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });               
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardS2audio.pause();
             GaaTil(sceneSwamp4);
@@ -963,7 +991,7 @@ function sceneSwampChanceFront() {
         chanceCardF4audio.play();
         const chance2 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF4.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });                // FERDIG - 
+        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });               - 
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardF4audio.pause();
             GaaTil(sceneSwamp4);
@@ -972,7 +1000,7 @@ function sceneSwampChanceFront() {
         chanceCardF5audio.play();
         const chance3 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF5.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });                // FERDIG - 
+        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });               - 
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardF5audio.pause();
             GaaTil(sceneSwamp4);
@@ -981,7 +1009,7 @@ function sceneSwampChanceFront() {
         chanceCardF6audio.play();
         const chance4 = new Blocks.Image("Bilder/KortKlare/Forest/Chance/chanceCardF6.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });                // FERDIG - 
+        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });               - 
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardF6audio.pause();
             GaaTil(sceneVillageX);
@@ -990,7 +1018,7 @@ function sceneSwampChanceFront() {
         chanceCardS3audio.play();
         const chance5 = new Blocks.Image("Bilder/KortKlare/Swamp/Chance/chanceCardS3.png", { x: 30, y: 10, width: 1020, height: 700 });
         const slobbiechance = new Blocks.CellAnimation(["Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdown.png", "Bilder/Karakterer/slobbiearmdownopenmouth.png"], { x: 700, y: 450, width: 450, height: 550, loop: true, auto: true });
-        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });                // FERDIG - 
+        const cbSwampChanceFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 35, y: 565, width: 150, height: 150 });               - 
         Actions.Click(cbSwampChanceFront, () => {
             chanceCardS3audio.pause();
             GaaTil(sceneSwamp4);
@@ -998,7 +1026,7 @@ function sceneSwampChanceFront() {
     }
 }
 
-// HUSK Å DOBBELTSJEKK AT ALT INNHOLD ER RIKTIG
+
 
 // FORESTMAP
 
@@ -1085,7 +1113,7 @@ function sceneForestChallengeFront() {
         chCardFBiggestTrollaudio.play();
         const challenge0 = new Blocks.Image("Bilder/KortKlare/Forest/Challenge/chCardFBiggestTroll.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbForestChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });                   // FERDIG  
+        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });                   
         Actions.Click(startbuttonCards, () => {
             chCardFBiggestTrollaudio.pause();
             GaaTil(chCardFBiggestTrollChallenge);
@@ -1098,7 +1126,7 @@ function sceneForestChallengeFront() {
         chCardFBearSleepTextaudio.play();
         const challenge1 = new Blocks.Image("Bilder/KortKlare/Forest/Challenge/chCardFBearSleep.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbForestChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });                // FERDIG
+        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });              
         Actions.Click(startbuttonCards, () => {
             chCardFBearSleepTextaudio.pause();
             GaaTil(chCardFBearSleepChallenge);
@@ -1110,16 +1138,19 @@ function sceneForestChallengeFront() {
     } else if (tall === 2) {
         chCardFBukkeneBruseaudio.play();
         const challenge2 = new Blocks.Image("Bilder/KortKlare/Forest/Challenge/chCardFBukkeneBruse.png", { x: 30, y: 10, width: 1020, height: 700 });
-        const cbForestChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });            // FERDIG 
+        const cbForestChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });           
         Actions.Click(cbForestChallengeFront, () => {
             chCardFBukkeneBruseaudio.pause();
-            GaaTil(sceneForest4);
+            Applauseaudio.play();
+            Applauseaudio.onended = () => {
+                GaaTil(sceneForest4);
+            };
         })
     } else if (tall === 3) {
         chCardFRRHFruitBasketaudio.play();
         const challenge3 = new Blocks.Image("Bilder/KortKlare/Forest/Challenge/chCardFRRHFruitBasket.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbForestChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });                // FERDIG 
+        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });               
         Actions.Click(startbuttonCards, () => {
             chCardFRRHFruitBasketaudio.pause();
             GaaTil(chCardFRRHFruitBasketChallenge);
@@ -1132,7 +1163,7 @@ function sceneForestChallengeFront() {
         chCardFSinnataggFacesaudio.play();
         const challenge4 = new Blocks.Image("Bilder/KortKlare/Forest/Challenge/chCardFSinnataggFaces.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbForestChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });                // FERDIG 
+        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });               
         Actions.Click(startbuttonCards, () => {
             chCardFSinnataggFacesaudio.pause();
             GaaTil(chCardFSinnataggFacesChallenge);
@@ -1145,7 +1176,7 @@ function sceneForestChallengeFront() {
         chCardFTrollChildrenBedaudio.play();
         const challenge5 = new Blocks.Image("Bilder/KortKlare/Forest/Challenge/chCardFTrollChildrenBed.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbForestChallengeFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });                // FERDIG 
+        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });               
         Actions.Click(startbuttonCards, () => {
             chCardFTrollChildrenBedaudio.pause();
             GaaTil(chCardFTrollChildrenBedChallenge)
@@ -1157,7 +1188,6 @@ function sceneForestChallengeFront() {
     }
 }
 
-//HUSK Å LEGGE TIL SELVE OPPGAVENE
 
 // QUESTIONS
 function sceneForestQuestionFront() {
@@ -1167,7 +1197,7 @@ function sceneForestQuestionFront() {
         qCardFCamoTrollTextaudio.play();
         const question0 = new Blocks.Image("Bilder/KortKlare/Forest/Question/qCardFCamoTroll.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbForestQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });                // FERDIG
+        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });              
         Actions.Click(startbuttonCards, () => {
             qCardFCamoTrollTextaudio.pause();
             GaaTil(qCardFCamoTrollQuestion1);
@@ -1179,7 +1209,7 @@ function sceneForestQuestionFront() {
         qCardFMikkelRevLetteraudio.play();
         const question1 = new Blocks.Image("Bilder/KortKlare/Forest/Question/qCardFMikkelRevLetter.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbForestQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });                // FERDIG 
+        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });               
         Actions.Click(startbuttonCards, () => {
             qCardFMikkelRevLetteraudio.pause();
             GaaTil(qCardFMikkelRevLetterQuestion);
@@ -1192,7 +1222,7 @@ function sceneForestQuestionFront() {
         qCardFTrollStealPrincessaudio.play();
         const question2 = new Blocks.Image("Bilder/KortKlare/Forest/Question/qCardFTrollStealPrincess.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbForestQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });                // FERDIG 
+        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });               
         Actions.Click(startbuttonCards, () => {
             qCardFTrollStealPrincessaudio.pause();
             GaaTil(qCardFTrollStealPrincessQuestion);
@@ -1205,7 +1235,7 @@ function sceneForestQuestionFront() {
         qCardFWitchWartsaudio.play();
         const question3 = new Blocks.Image("Bilder/KortKlare/Forest/Question/qCardFWitchWarts.png", { x: 30, y: 10, width: 1020, height: 700 });
         const cbForestQuestionFront = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 50, y: 550, width: 150, height: 150 });
-        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });                // FERDIG 
+        const startbuttonCards = new Blocks.Image("Bilder/Knapper/startbuttonCards.png", { x: 475, y: 20, width: 150, height: 150 });               
         Actions.Click(startbuttonCards, () => {
             qCardFWitchWartsaudio.pause();
             GaaTil(qCardFWitchWartsQuestion);
@@ -1217,6 +1247,7 @@ function sceneForestQuestionFront() {
     }
 
 }
+
 // CHANCES
 function sceneForestChanceFront() {
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", { x: -8, y: -8, width: 1088, height: 818 });
@@ -1299,14 +1330,16 @@ function chCardMBuildBricksChallenge() {
     const brick2 = new Blocks.Image("Bilder/Oppgaver/brick.png", { x: 400, y: 660, width: 150, height: 150 });
     const brick3 = new Blocks.Image("Bilder/Oppgaver/brick.png", { x: 603, y: 659, width: 150, height: 150 });
     const brick4 = new Blocks.Image("Bilder/Oppgaver/brick.png", { x: 800, y: 511, width: 150, height: 150 });
-    const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 475, y: 10, width: 150, height: 150 });
-    Actions.Drag(brick1);
+    const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 475, y: 10, width: 150, height: 150 });               
+    Actions.Drag(brick1);                                                                                                                   
     Actions.Drag(brick2);
     Actions.Drag(brick3);
     Actions.Drag(brick4);
-    Actions.Drag(mountain1);
     Actions.Click(continuebutton, () => {
-        GaaTil(sceneMountain4);
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneMountain4);
+        } 
     })
 }
 
@@ -1314,17 +1347,20 @@ function chCardMBuildBridgeChallenge() {
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", { x: -8, y: -8, width: 1088, height: 818 });
     const challengemap = new Blocks.Image("Bilder/Oppgaver/buildBridgeBackground.png", { x: 50, y: 100, width: 960, height: 700 });
     const shadowbear = new Blocks.Image("Bilder/Karakterer/shadowbear.png", { x: 750, y: 500, width: 200, height: 250 });
-    const plank1 = new Blocks.Image("Bilder/Oppgaver/plank.png", { x: 76, y: 150, width: 200, height: 200 })
-    const plank2 = new Blocks.Image("Bilder/Oppgaver/plank.png", { x: 76, y: 150, width: 200, height: 200 })
-    const plank3 = new Blocks.Image("Bilder/Oppgaver/plank.png", { x: 76, y: 150, width: 200, height: 200 })
-    const plank4 = new Blocks.Image("Bilder/Oppgaver/plank.png", { x: 76, y: 150, width: 200, height: 200 })
+    const plank1 = new Blocks.Image("Bilder/Oppgaver/plank.png", { x: 76, y: 150, width: 200, height: 200 });
+    const plank2 = new Blocks.Image("Bilder/Oppgaver/plank.png", { x: 76, y: 150, width: 200, height: 200 });
+    const plank3 = new Blocks.Image("Bilder/Oppgaver/plank.png", { x: 76, y: 150, width: 200, height: 200 });
+    const plank4 = new Blocks.Image("Bilder/Oppgaver/plank.png", { x: 76, y: 150, width: 200, height: 200 });
     const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 475, y: 10, width: 150, height: 150 });
     Actions.Drag(plank1);
     Actions.Drag(plank2);
     Actions.Drag(plank3);
     Actions.Drag(plank4);
     Actions.Click(continuebutton, () => {
-        GaaTil(sceneMountain4);
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneMountain4);
+        }
     })
 }
 
@@ -1349,15 +1385,15 @@ function chCardMCampfireChallenge1() {
 }
 
 function chCardMCampfireChallenge2() {
+    Applauseaudio.play();
     const mountainmap = new Blocks.Image("Bilder/Bakgrunner/mountainmap.jpg", { x: -8, y: -8, width: 1088, height: 818 });
     const wood1 = new Blocks.Image("Bilder/Oppgaver/wood1.png", { x: 526, y: 609, width: 150, height: 100 });
     const stick1 = new Blocks.Image("Bilder/Oppgaver/stick.png", { x: 419, y: 558, width: 250, height: 150 });
     const flame = new Blocks.Image("Bilder/Oppgaver/flame.png", { x: 450, y: 420, width: 200, height: 250 });
     const wood2 = new Blocks.Image("Bilder/Oppgaver/wood2.png", { x: 443, y: 616, width: 150, height: 100 });
-    const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 475, y: 10, width: 150, height: 150 });
-    Actions.Click(continuebutton, () => {
+    Applauseaudio.onended = () => {
         GaaTil(sceneMountain4);
-    })
+    }
 }
 
 function chCardMHighestMountainChallenge() {
@@ -1367,7 +1403,10 @@ function chCardMHighestMountainChallenge() {
     const mountain3 = new Blocks.Image("Bilder/Oppgaver/mountain.png", { x: 500, y: 370, width: 200, height: 450 });
     const mountain4 = new Blocks.Image("Bilder/Oppgaver/mountain.png", { x: 700, y: 435, width: 400, height: 380 });
     Actions.Click(mountain3, () => {
-        GaaTil(sceneMountain4);
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneMountain4);
+        }
     })
 }
 
@@ -1379,7 +1418,10 @@ function qCardMAskeladdenCastleQuestion() {
     const soriamoria = new Blocks.Image("Bilder/Oppgaver/soriamoria.png", { x: 700, y: 20, width: 350, height: 350 });
     const swamp = new Blocks.Image("Bilder/Oppgaver/swamp.png", { x: 20, y: 20, width: 350, height: 350 });
     Actions.Click(soriamoria, () => {
-        GaaTil(sceneMountain4);
+        reactionPGoodWorkaudio.play();
+        reactionPGoodWorkaudio.onended = () => {
+            GaaTil(sceneMountain4);
+        }
     })
 }
 
@@ -1393,8 +1435,17 @@ function qCardMFogCatHideQuestion() {
     const answercard1 = new Blocks.Image("Bilder/Oppgaver/hand5finger.png", { x: 75, y: 80, width: 250, height: 200 });
     const answercard2 = new Blocks.Image("Bilder/Oppgaver/hand2finger.png", { x: 755, y: 80, width: 250, height: 200 });
     const answercard3 = new Blocks.Image("Bilder/Oppgaver/hand4finger.png", { x: 410, y: 80, width: 250, height: 200 });
+    Actions.Click(answercard1, () => {
+        reactionNCloseOneaudio.play();
+    })
+    Actions.Click(answercard2, () => {
+        reactionNTryAgainaudio.play();
+    })
     Actions.Click(answercard3, () => {
-        GaaTil(sceneMountain4);
+        reactionPYouDidItaudio.play();
+        reactionPYouDidItaudio.onended = () => {
+            GaaTil(sceneMountain4);
+        }
     })
 }
 
@@ -1404,8 +1455,17 @@ function qCardMFogCatPrintsQuestion() {
     const fogCatsWrong1 = new Blocks.Image("Bilder/Oppgaver/qMFogCatPrintsWrong1.png", { x: 100, y: 550, width: 200, height: 200 });
     const fogCatsWrong2 = new Blocks.Image("Bilder/Oppgaver/qMFogCatPrintsWrong2.png", { x: 800, y: 550, width: 200, height: 200 });
     const fogCatsCorrect = new Blocks.Image("Bilder/Oppgaver/qMFogCatPrintsCorrect.png", { x: 450, y: 550, width: 200, height: 200 });
+    Actions.Click(fogCatsWrong1, () => {
+        reactionNCloseOneaudio.play();
+    })
+    Actions.Click(fogCatsWrong2, () => {
+        reactionNTryAgainaudio.play();
+    })
     Actions.Click(fogCatsCorrect, () => {
-        GaaTil(sceneMountain4);
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneMountain4);
+        }
     })
 }
 
@@ -1417,7 +1477,10 @@ function qCardMSlobbieHideQuestion() {
     const rock3 = new Blocks.Image("Bilder/Oppgaver/rock3.png", { x: -8, y: 400, width: 100, height: 100 });
     const rock4 = new Blocks.Image("Bilder/Oppgaver/rock4.png", { x: 520, y: 400, width: 100, height: 100 });
     Actions.Click(slobbie, () => {
-        GaaTil(sceneMountain4);
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneMountain4);
+        }
     })
 }
 
@@ -1426,8 +1489,17 @@ function qCardMSteepHillQuestion() {
     const steephillcorrect = new Blocks.Image("Bilder/Oppgaver/steephillcorrect.png", { x: 50, y: 150, width: 400, height: 300 });
     const steephillwrong1 = new Blocks.Image("Bilder/Oppgaver/steephillwrong1.png", { x: 450, y: 450, width: 400, height: 300 });
     const steephillwrong2 = new Blocks.Image("Bilder/Oppgaver/steephillwrong2.png", { x: 600, y: 100, width: 400, height: 300 });
+    Actions.Click(steephillwrong1, () => {
+        reactionNSteepHillSlipperyaudio.play();
+    })
+    Actions.Click(steephillwrong2, () => {
+        reactionNSteepHillScaryaudio.play();
+    })
     Actions.Click(steephillcorrect, () => {
-        GaaTil(sceneMountain4);
+        reactionPSteepHillSafeaudio.play();
+        reactionPSteepHillSafeaudio.onended = () => {
+            GaaTil(sceneMountain4);
+        }
     })
 }
 
@@ -1436,8 +1508,17 @@ function qCardMWhoDoesntBelongQuestion() {
     const correctcard = new Blocks.Image("Bilder/Oppgaver/huldrasadCard.png", { x: 600, y: 100, width: 400, height: 300 });
     const wrongcard1 = new Blocks.Image("Bilder/Oppgaver/shadowbearcard.png", { x: 50, y: 150, width: 400, height: 300 });
     const wrongcard2 = new Blocks.Image("Bilder/Oppgaver/tinyelfcard.png", { x: 450, y: 450, width: 400, height: 300 });
+    Actions.Click(wrongcard1, () => {
+        reactionNWhoDoesntBelongShadowbearaudio.play();
+    })
+    Actions.Click(wrongcard2, () => {
+        reactionNWhoDoesntBelongSnowElfaudio.play();
+    })
     Actions.Click(correctcard, () => {
-        GaaTil(sceneMountain4);
+        reactionPWhoDoesntBelongHuldraaudio.play();
+        reactionPWhoDoesntBelongHuldraaudio.onended = () => {
+            GaaTil(sceneMountain4);
+        }
     })
 }
 
@@ -1448,7 +1529,10 @@ function chanceCardMTrollScareMap() {
     const hidingtroll = new Blocks.Image("Bilder/Karakterer/lonelytrollhappy.png", { x: 450, y: 430, width: 70, height: 100 });
     const rock = new Blocks.Image("Bilder/Oppgaver/rock3.png", { x: 420, y: 480, width: 150, height: 100 });
     Actions.Click(hidingtroll, () => {
-        GaaTil(sceneMountain4);
+        reactionPYouDidItaudio.play();
+        reactionPYouDidItaudio.onended = () => {
+            GaaTil(sceneMountain4);
+        }
     })
 }
 
@@ -1460,12 +1544,13 @@ function chCardFBearSleepChallenge() {
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", { x: -8, y: -8, width: 1088, height: 818 });
     const bearSleep = new Blocks.Image("Bilder/Karakterer/bearSleep.png", { x: 750, y: 600, width: 200, height: 150 });
     const slobbieSneaky = new Blocks.Image("Bilder/Karakterer/slobbiearmdown.png", { x: -100, y: 500, width: 300, height: 400 });
-    const backbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 475, y: 20, width: 150, height: 150 });                // GÅ TILBAKE TIL DEN
     Actions.Tween(slobbieSneaky, 1.2, 0);
-    Actions.Click(backbutton, () => {
-        chCardBearSleepSong.pause();
-        GaaTil(sceneForest4);
-    })
+    chCardBearSleepSong.onended = () => {
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneForest4);
+        }
+    }
 }
 
 function chCardFBiggestTrollChallenge() {
@@ -1477,7 +1562,10 @@ function chCardFBiggestTrollChallenge() {
     const trollwrong5 = new Blocks.Image("Bilder/Karakterer/trollfacefront.png", { x: 950, y: 460, width: 120, height: 120 });
     const trollcorrect = new Blocks.Image("Bilder/Karakterer/trollfacefront.png", { x: 30, y: 420, width: 200, height: 200 });
     Actions.Click(trollcorrect, () => {
-        GaaTil(sceneForest4);
+        reactionPGoodWorkaudio.play();
+        reactionPGoodWorkaudio.onended = () => {
+            GaaTil(sceneForest4);
+        }
     })
 }
 
@@ -1487,7 +1575,10 @@ function chCardFRRHFruitBasketChallenge() {
     const rock1 = new Blocks.Image("Bilder/Oppgaver/rock1.png", { x: 400, y: 500, width: 150, height: 150 });
     const rock2 = new Blocks.Image("Bilder/Oppgaver/rock3.png", { x: 900, y: 450, width: 150, height: 120 });
     Actions.Click(fruitbasket, () => {
-        GaaTil(sceneForest4)
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneForest4);
+        }
     })
 }
 
@@ -1503,13 +1594,13 @@ function chCardFSinnataggFacesChallenge2() {
     sinnataggLaughaudio.play();
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", { x: -8, y: -8, width: 1088, height: 818 });
     const sinnatagghappy = new Blocks.Image("Bilder/Karakterer/sinnatagghappy.png", { x: 360, y: 200, width: 400, height: 400 })
-    const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 475, y: 10, width: 150, height: 150 });
-    Actions.Click(continuebutton, () => {
-        sinnataggLaughaudio.pause();
-        GaaTil(sceneForest4);
-    })
+        sinnataggLaughaudio.onended = () => {
+            reactionPYouDidItaudio.play();
+            reactionPYouDidItaudio.onended = () => {
+                GaaTil(sceneForest4)
+            }
+    }
 }
-
 function chCardFTrollChildrenBedChallenge() {
     const forestmap = new Blocks.Image("Bilder/Bakgrunner/trollskogstienmap.png", { x: -8, y: -8, width: 1088, height: 818 });
     const bed = new Blocks.Image("Bilder/Oppgaver/bed.png", { x: -60, y: 100, width: 1200, height: 700 });
@@ -1519,15 +1610,17 @@ function chCardFTrollChildrenBedChallenge() {
     const troll4 = new Blocks.Image("Bilder/Karakterer/trollchild.png", { x: 33, y: 231, width: 150, height: 150 });
     const troll5 = new Blocks.Image("Bilder/Karakterer/trollchild.png", { x: 178, y: 18, width: 150, height: 150 });
     const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 475, y: 10, width: 150, height: 150 });
-    Actions.Click(continuebutton, () => {
-        GaaTil(sceneForest4);
-    })
     Actions.Drag(troll1);
     Actions.Drag(troll2);
     Actions.Drag(troll3);
     Actions.Drag(troll4);
     Actions.Drag(troll5);
-
+    Actions.Click(continuebutton, () => {
+        reactionPGoodWorkaudio.play();
+        reactionPGoodWorkaudio.onended = () => {
+            GaaTil(sceneForest4);
+        }
+    })
 }
 
 // QUESTIONS
@@ -1564,8 +1657,17 @@ function qCardFMikkelRevLetterQuestion() {
     const wronganswer1 = new Blocks.Image("Bilder/Oppgaver/mikkelrevwrong1.png", { x: 50, y: 150, width: 400, height: 300 });
     const wronganswer2 = new Blocks.Image("Bilder/Oppgaver/mikkelrevwrong2.png", { x: 450, y: 450, width: 400, height: 300 });
     const correctanswer = new Blocks.Image("Bilder/Oppgaver/mikkelrevcorrect.png", { x: 600, y: 100, width: 400, height: 300 });
+    Actions.Click(wronganswer1, () => {
+        reactionNMikkelRevMomaudio.play();
+    })
+    Actions.Click(wronganswer2, () => {
+        reactionNMikkelRevToiletaudio.play();
+    })
     Actions.Click(correctanswer, () => {
-        GaaTil(sceneForest4);
+        reactionPMikkelRevAfricaaudio.play();
+        reactionPMikkelRevAfricaaudio.onended = () => {
+            GaaTil(sceneForest4);
+        }
     })
 }
 
@@ -1574,8 +1676,17 @@ function qCardFTrollStealPrincessQuestion() {
     const wronganswer2 = new Blocks.Image("Bilder/Oppgaver/trollstealprincesswrong1.png", { x: 450, y: 450, width: 400, height: 300 });
     const wronganswer1 = new Blocks.Image("Bilder/Oppgaver/trollstealprincesswrong2.png", { x: 600, y: 100, width: 400, height: 300 });
     const correctanswer = new Blocks.Image("Bilder/Oppgaver/trollstealprincesscorrect.png", { x: 50, y: 150, width: 400, height: 300 });
+    Actions.Click(wronganswer1, () => {
+        reactionNTrollStealPrincessTrashaudio.play();
+    })
+    Actions.Click(wronganswer2, () => {
+        reactionNTrollStealPrincessYellaudio.play();
+    })
     Actions.Click(correctanswer, () => {
-        GaaTil(sceneForest4);
+        reactionPTrollStealPrincessTrapaudio.play();
+        reactionPTrollStealPrincessTrapaudio.onended = () => {
+            GaaTil(sceneForest4);
+        }
     })
 }
 
@@ -1585,8 +1696,17 @@ function qCardFWitchWartsQuestion() {
     const wronganswer1 = new Blocks.Image("Bilder/Oppgaver/witchwartswrong1.png", { x: 50, y: 550, width: 400, height: 250 });
     const wronganswer2 = new Blocks.Image("Bilder/Oppgaver/witchwartswrong2.png", { x: 370, y: 550, width: 400, height: 250 });
     const correctanswer = new Blocks.Image("Bilder/Oppgaver/witchwartscorrect.png", { x: 680, y: 550, width: 400, height: 250 });
+    Actions.Click(wronganswer1, () => {
+        reactionNTryAgainaudio.play();
+    })
+    Actions.Click(wronganswer2, () => {
+        reactionNCloseOneaudio.play();
+    })
     Actions.Click(correctanswer, () => {
-        GaaTil(sceneForest4);
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneForest4);
+        }
     })
 }
 
@@ -1597,18 +1717,18 @@ function chCardSHuldraDanceChallenge() {
     chCardSHuldraDanceSong.play();
     const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", { x: -8, y: -8, width: 1088, height: 818 });
     const HuldraSad = new Blocks.Image("Bilder/Karakterer/huldrasad.png", { x: 350, y: 430, width: 450, height: 450 });
-    chCardSHuldraDanceSong.onended = function () {
+    chCardSHuldraDanceSong.onended = () => {
         GaaTil(chCardSHuldraDanceChallenge1);
     }
 }
 
 function chCardSHuldraDanceChallenge1() {
+    Applauseaudio.play();
     const swampmap = new Blocks.Image("Bilder/Bakgrunner/swampmap.png", { x: -8, y: -8, width: 1088, height: 818 });
     const HuldraHappy = new Blocks.Image("Bilder/Karakterer/huldrahappy.png", { x: 350, y: 430, width: 450, height: 450 });
-    const exitbutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 475, y: 10, width: 150, height: 150 });
-    Actions.Click(exitbutton, () => {
+    Applauseaudio.onended = () => {
         GaaTil(sceneSwamp4);
-    })
+    }
 
 }
 
@@ -1620,14 +1740,18 @@ function chCardSEarwaxCandleChallenge() {
     const earwax4 = new Blocks.Image("Bilder/Oppgaver/earwax.png", { x: 800, y: 600, width: 200, height: 200 });
     const candle = new Blocks.Image("Bilder/Oppgaver/candleearwax.png", { x: 850, y: 100, width: 150, height: 300 });
     const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 475, y: 10, width: 150, height: 150 });
-    Actions.Click(continuebutton, () => {
-        GaaTil(sceneSwamp4);
-    })
     Actions.Drag(earwax1);
     Actions.Drag(earwax2);
     Actions.Drag(earwax3);
     Actions.Drag(earwax4);
     Actions.Drag(candle);
+    Actions.Click(continuebutton, () => {
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneSwamp4);
+        }
+    })
+   
 }
 
 function chCardSSlobbieSnakeTree() {
@@ -1637,12 +1761,15 @@ function chCardSSlobbieSnakeTree() {
     const brick2 = new Blocks.Image("Bilder/Oppgaver/brick.png", { x: 634, y: 712, width: 100, height: 100 });
     const brick3 = new Blocks.Image("Bilder/Oppgaver/brick.png", { x: 848, y: 710, width: 100, height: 100 });
     const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 475, y: 10, width: 150, height: 150 });
-    Actions.Click(continuebutton, () => {
-        GaaTil(sceneSwamp4);
-    })
     Actions.Drag(brick1);
     Actions.Drag(brick2);
     Actions.Drag(brick3);
+    Actions.Click(continuebutton, () => {
+        reactionPYouDidItaudio.play();
+        reactionPYouDidItaudio.onended = () => {
+            GaaTil(sceneSwamp4);
+        }
+    })
 }
 
 // QUESTIONS
@@ -1657,8 +1784,17 @@ function qCardSCountCrocoQuestion() {
     const wronganswer1 = new Blocks.Image("Bilder/Oppgaver/hand2finger.png", { x: 50, y: 50, width: 300, height: 300 });
     const wronganswer2 = new Blocks.Image("Bilder/Oppgaver/hand4finger.png", { x: 400, y: 50, width: 300, height: 300 });
     const correctanswer = new Blocks.Image("Bilder/Oppgaver/hand5finger.png", { x: 740, y: 50, width: 300, height: 300 });
+    Actions.Click(wronganswer1, () => {
+        reactionNTryAgainaudio.play();
+    })
+    Actions.Click(wronganswer2, () => {
+        reactionNCloseOneaudio.play();
+    })
     Actions.Click(correctanswer, () => {
-        GaaTil(sceneSwamp4);
+        reactionPGoodWorkaudio.play();
+        reactionPGoodWorkaudio.onended = () => {
+            GaaTil(sceneSwamp4);
+        }
     })
 }
 
@@ -1667,8 +1803,17 @@ function qCardSFossegrimenLureQuestion() {
     const correctanswer = new Blocks.Image("Bilder/Oppgaver/fossegrimencorrect.png", { x: 50, y: 150, width: 400, height: 300 });
     const wronganswer1 = new Blocks.Image("Bilder/Oppgaver/fossegrimenlurewrong1.png", { x: 450, y: 450, width: 400, height: 300 });
     const wronganswer2 = new Blocks.Image("Bilder/Oppgaver/fossegrimenlurewrong2.png", { x: 600, y: 100, width: 400, height: 300 });
+    Actions.Click(wronganswer1, () => {
+        reactionNFossegrimenLureGoWithaudio.play();
+    })
+    Actions.Click(wronganswer2, () => {
+        reactionNFossegrimenLureTradeaudio.play();
+    })
     Actions.Click(correctanswer, () => {
-        GaaTil(sceneSwamp4);
+        reactionPFossegrimenLureCutStringsaudio.play();
+        reactionPFossegrimenLureCutStringsaudio.onended = () => {
+            GaaTil(sceneSwamp4);
+        }
     })
 }
 
@@ -1681,7 +1826,10 @@ function qCardSFrogEatSlobbieQuestion() {
     const frog4 = new Blocks.Image("Bilder/Karakterer/frog2.png", { x: 650, y: 450, width: 150, height: 150 });
     const frog5 = new Blocks.Image("Bilder/Karakterer/frog1.png", { x: 550, y: 620, width: 50, height: 50 });
     Actions.Click(frogcorrect, () => {
-        GaaTil(sceneSwamp4);
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneSwamp4);
+        }
     })
 }
 
@@ -1690,8 +1838,14 @@ function qCardSFrogRiddleQuestion() {
     const swampriddle = new Blocks.Image("Bilder/Oppgaver/froginswamp.png", { x: 200, y: -8, width: 700, height: 500 });
     const riddleanswerwrong = new Blocks.Image("Bilder/Oppgaver/froginswampwrong1.png", { x: 200, y: 550, width: 300, height: 200 });
     const riddleanswercorrect = new Blocks.Image("Bilder/Oppgaver/froginswampcorrect.png", { x: 600, y: 550, width: 300, height: 200 });
+    Actions.Click(riddleanswerwrong, () => {
+        reactionNCloseOneaudio.play();
+    })
     Actions.Click(riddleanswercorrect, () => {
-        GaaTil(sceneSwamp4);
+        reactionPYouDidItaudio.play();
+        reactionPYouDidItaudio.onended = () => {
+            GaaTil(sceneSwamp4);
+        }
     })
 }
 
@@ -1701,8 +1855,17 @@ function qCardSHippoBubbaQuestion() {
     const wrong1 = new Blocks.Image("Bilder/Oppgaver/hippobubbawrong1.png", { x: 75, y: 450, width: 300, height: 250 });
     const wrong2 = new Blocks.Image("Bilder/Oppgaver/hippobubbawrong2.png", { x: 700, y: 450, width: 300, height: 250 });
     const correct = new Blocks.Image("Bilder/Oppgaver/hippobubbacorrect.png", { x: 390, y: 450, width: 300, height: 250 });
+    Actions.Click(wrong1, () => {
+        reactionNCloseOneaudio.play();
+    })
+    Actions.Click(wrong2, () => {
+        reactionNTryAgainaudio.play();
+    })
     Actions.Click(correct, () => {
-        GaaTil(sceneSwamp4);
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneSwamp4);
+        }
     })
 }
 
@@ -1719,8 +1882,17 @@ function qCardSHowManyFrogsQuestion() {
     const wronganswer1 = new Blocks.Image("Bilder/Oppgaver/hand5finger.png", { x: 420, y: 10, width: 250, height: 225 });
     const wronganswer2 = new Blocks.Image("Bilder/Oppgaver/qMFogCatPrintsWrong2.png", { x: 700, y: 10, width: 250, height: 225 });
     const correctanswer = new Blocks.Image("Bilder/Oppgaver/qMFogCatPrintsWrong1.png", { x: 140, y: 10, width: 250, height: 225 });
+    Actions.Click(wronganswer1, () => {
+        reactionNCloseOneaudio.play();
+    })
+    Actions.Click(wronganswer2, () => {
+        reactionNTryAgainaudio.play();
+    })
     Actions.Click(correctanswer, () => {
-        GaaTil(sceneSwamp4);
+        Applauseaudio.play();
+        Applauseaudio.onended = () => {
+            GaaTil(sceneSwamp4);
+        }
     })
 }
 
@@ -1776,7 +1948,7 @@ function sceneFjellheksHome() {
     const speechbubble2 = new Blocks.Image("Bilder/Snakkebobler/speechbubbleFjellheksHomeSlobbie.png", { x: 550, y: 300, width: 400, height: 300 });
     const continuebutton = new Blocks.Image("Bilder/Knapper/continuebutton.png", { x: 800, y: 50, width: 150, height: 150 });
     sceneFjellheksHomeReverseaudio.play();
-    sceneFjellheksHomeReverseaudio.onended = function () {
+    sceneFjellheksHomeReverseaudio.onended = () => {
         sceneFjellheksHomeSlobbieaudio.play();
     }
     Actions.Click(continuebutton, () => {
